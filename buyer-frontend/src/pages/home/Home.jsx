@@ -31,8 +31,8 @@ const Home = () => {
           </div>
           {/* home btns box */}
           <div className='home-btns-box'>
-            <button className='blue-submit-btn' onClick={goToSignUp}>Sign Up</button>
-            <button className='blue-submit-btn' onClick={goToLogIn}>Log In</button>
+            <button id='go-to-sign-up-btn' onClick={goToSignUp}>Sign Up</button>
+            <button id='go-to-log-in-btn' onClick={goToLogIn}>Log In</button>
           </div>
         </div>
       </div>
