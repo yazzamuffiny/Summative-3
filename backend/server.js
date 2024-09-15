@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 // route imports
 //  ---------  ROUTES GO HERE
+const commentRoutes = require('./routes/comments')
 
 //set variable of app to run express method
 const app = express();
@@ -29,6 +30,7 @@ app.use((req, res, next) => {
 
 //attach routes to the app
 // ---------- Route paths go here
+app.use('/api/comments/', commentRoutes)
 
 //home route for backend
 app.get('/', (req, res) => {
