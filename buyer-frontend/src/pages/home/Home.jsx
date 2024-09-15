@@ -1,6 +1,17 @@
 import React from 'react'
 
 const Home = () => {
+  const goToLogIn = async (e) => {
+    e.preventDefault()
+    console.log('log in btn is clicked')
+  }
+
+  const goToSignUp = async (e) => {
+    e.preventDefault()
+    console.log('sign up btn is clicked')
+    
+  }
+
   return (
     <div className='home-page-box'>
       {/* home left side box */}
@@ -20,8 +31,8 @@ const Home = () => {
           </div>
           {/* home btns box */}
           <div className='home-btns-box'>
-            <button className='blue-submit-btn'>Sign Up</button>
-            <button className='blue-submit-btn'>Log In</button>
+            <button className='blue-submit-btn' onClick={goToSignUp}>Sign Up</button>
+            <button className='blue-submit-btn' onClick={goToLogIn}>Log In</button>
           </div>
         </div>
       </div>
