@@ -40,3 +40,5 @@ router.post('/', upload.single('image'), createListing);
 router.patch('/:id', updateListing)
 //delete listing
 router.delete('/:id', deleteListing);
+
+module.exports = router;
