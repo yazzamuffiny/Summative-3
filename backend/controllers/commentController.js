@@ -10,7 +10,20 @@ const getComments = async (req, res) => {
     res.status(200).json(comments)
 }
 
+// create comments method
+const createComment = async (req, res) => {
+    const {user_id, text} = req.body
+
+    try {
+        const comment = await Comment.create({user_id, text})
+        res.status(200).json(comment)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+}
+
 // export functions
 module.exports = {
     getComments,
+    createComment
 }
