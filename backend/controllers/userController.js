@@ -32,3 +32,5 @@ const signupUser = async (req,res) => {
     }
     // res.json({mssg: 'signup user'})
 }
+
+module.exports = {signupUser, loginUser}
