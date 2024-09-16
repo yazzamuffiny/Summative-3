@@ -6,7 +6,7 @@ import './signup.scss'
 const SignUp = () => {
   return (
     <div>
-      signup working
+      
     </div>
   )
 }
