@@ -10,6 +10,8 @@ import Footer from './components/footer/Footer'
 
 //page imports
 import Home from './pages/home/Home'
+import AddListingForm from './pages/add-listing/AddListingForm'
+import EditListingForm from './pages/edit-listing/EditListingForm'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
       <Nav/>
         <Routes>
           <Route exact path='/' element={<Home/>}/>
+          <Route exact path='/add-listing' element={<AddListingForm/>}/>
+          <Route exact path='/edit-listing' element={<EditListingForm/>}/>
         </Routes>
       <Footer/>
     </HashRouter>
