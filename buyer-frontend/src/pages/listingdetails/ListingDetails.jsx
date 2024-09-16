@@ -12,7 +12,7 @@ const ListingDetails = ({ listing }) => {
   };
 
   return (
-    <div className='listing-card'>
+    <div className='listing-card' onClick={handleNavigate}>
       <div className='card-img'>
         <img src={listing.image} alt={`Image of ${listing.breed}`} />
       </div>
@@ -32,9 +32,6 @@ const ListingDetails = ({ listing }) => {
           ago
         </p>
       </div>
-      <button className='card-button' onClick={handleNavigate}>
-        View Details
-      </button>
     </div>
   );
 };
