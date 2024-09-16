@@ -90,7 +90,7 @@ const Home = () => {
       <h1> Local Listings </h1>
       </div>
 
-      <button onClick={handleEdit}> edit listing </button>
+      <button onClick={handleEdit}> edit listing shortcut </button>
 
       <div className='filter-listing-cont'>
 
