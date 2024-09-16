@@ -2,10 +2,23 @@ import './listingdetails.scss'
 
 import React from 'react'
 
+
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
+import { useNavigate } from 'react-router-dom'
+
+
 const ListingDetails = ({listing}) => {
+
+  const navigate = useNavigate()
+  //handle navigate
+  const handleNavigate = () => {
+    let path = `/${listing._id}`
+    navigate(path)
+}
+
   return (
+
     <div className='listing-card'>
       <div className='card-img'>
         <img src={listing.image} alt={listing.breed} />
@@ -27,6 +40,11 @@ const ListingDetails = ({listing}) => {
           </p>
       </div>
         
+
+    <div className='listing-card' onClick={handleNavigate}>
+        <p>{listing.breed}</p>
+      
+
     </div>
   )
 }

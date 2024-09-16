@@ -2,8 +2,96 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    margin: 20px;
+
+    button {
+        width: 150px;
+        padding: 10px;
+        border-radius: 50px;
+        border: 2px solid #349DD6;
+        background-color: #349DD6;
+        font-family: "Jua", sans-serif;
+        color: white;
+        font-size: 1.3em;
+        transition: all 0.3s ease;
+    }
+    button:hover {
+        background-color: white;
+        border: 2px solid #349DD6;
+        color: #349DD6;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    h1 {
+        font-family: "Hachi Maru Pop", cursive;
+        background-color: white;
+        font-size: 3em;
+        border-radius: 9px;
+        text-align: center;
+        margin-left: 20%;
+        padding: 10px;
+        box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+    }
+}
+
+.add-listing-form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 50px;
 
     h2 {
-        font-family: "Hachi Maru Pop", cursive;
+        font-family: "Jua", sans-serif;
+        margin: 10px 0px;
+    }
+
+    .input-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 10px;
+
+        .form-input {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 200px;
+    
+            label {
+                font-family: "Afacad", sans-serif;
+                margin-bottom: 7px;
+            }
+        
+            input, select {
+                padding: 6px;
+                border-radius: 10px;
+                border: 2px solid black;
+                margin-bottom: 7px;
+            }
+        }
+    }
+
+    button {
+        width: 200px;
+        padding: 10px;
+        border-radius: 50px;
+        border: 2px solid #349DD6;
+        background-color: #349DD6;
+        font-family: "Jua", sans-serif;
+        color: white;
+        font-size: 1.3em;
+        margin-left: 40%;
+        transition: all 0.3s ease;
+    }
+    button:hover {
+        background-color: white;
+        border: 2px solid #349DD6;
+        color: #349DD6;
+        cursor: pointer;
+        transition: all 0.3s ease;
     }
 }
