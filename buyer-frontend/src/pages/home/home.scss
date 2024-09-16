@@ -3,79 +3,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-// home page css
-.home-page-box {
+// global reset
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// end global reset
+
+// nav css
+.navbar {
+    margin: 0;
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-color: pink;
+    align-items: center;
+    justify-content: space-between;
 
-    // home left & right side css
-    .home-left-content-box, .home-right-content-box {
+    .userInt {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: center ;
-    }
 
-    // home left side css
-    .home-left-content-box {
-        width: 60%;
-
-        // header box css 
-        .home-header-box {
-            width: 80%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 25px;
-            background-color: #fff;
-
-            // main header css
-            .main-header {
-                font-size: 90px;
-                font-family: "Hachi Maru Pop", cursive;
-            }
+        button {
+            margin-left: 15px;
+            padding: 10px 22px;
+            border-radius: 50px;
+            background-color: #349DD6;
+            font-size: 2em;
+            font-family: "Jua", sans-serif;
+            color: #fff;
+            border: none;
         }
 
-        // home content box 
-        .home-content-box {
-            width: 80%;
-            padding: 25px;
-            background-color: #fff;
+        span {
+            font-size: 2em;
+            font-family: "Jua", sans-serif;
+        }
+    }
+}
+// end nav css
 
-            // home text box
-            .home-text-box {
-                font-size: 32px;
-              font-family: "Afacad", sans-serif;
-            }
+// home page css
+.home-page-main-box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
-            // home btns box
-            .home-btns-box {
+    // home page box css
+    .home-page-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    
+        // home left & right side css
+        .home-left-content-box, .home-right-content-box {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        // end home left & right side css
+    
+        // home left side css
+        .home-left-content-box {
+            width: 55%;
+    
+            // header box css 
+            .home-header-box {
+                width: 80%;
                 display: flex;
                 align-items: center;
-                justify-content: space-evenly;
-                margin-top: 20px;
-
-                // sign up & log in btns css
-                #go-to-sign-up-btn, #go-to-log-in-btn {
-                    padding: 10px 72px;
-                    border-radius: 50px;
-                    background-color: #349DD6;
-                    font-size: 32px;
-                    font-family: "Jua", sans-serif;
-                    color: #fff;
-                    border: none;
+                justify-content: center;
+                padding: 25px;
+                background-color: #fff;
+                border-radius: 50px;
+    
+                // main header css
+                .main-header {
+                    font-size: 5.625em;
+                    font-family: "Hachi Maru Pop", cursive;
+                }
+            }
+    
+            // home content box css
+            .home-content-box {
+                width: 80%;
+                padding: 25px;
+                margin-top: 46px;
+                background-color: #fff;
+                border-radius: 50px;
+    
+                // home text box
+                .home-text-box {
+                    font-size: 2em;
+                  font-family: "Afacad", sans-serif;
+                }
+    
+                // home btns box
+                .home-btns-box {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    margin-top: 35px;
+                    margin-bottom: 20px;
+    
+                    // sign up & log in btns css
+                    #go-to-sign-up-btn, #go-to-log-in-btn {
+                        padding: 10px 72px;
+                        border-radius: 50px;
+                        background-color: #349DD6;
+                        font-size: 2em;
+                        font-family: "Jua", sans-serif;
+                        color: #fff;
+                        border: none;
+                    }
                 }
             }
         }
-    }
+        // end home left side css
+    
+        // home right side css
+        .home-right-content-box {
+            width: 45%;
+    
+            // home logo box
+            .home-logo-box {
+                width: 500px;
+                height: 500px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                border-radius: 50px;
 
-    // home right side css
-    .home-right-content-box {
-        width: 40%;
-
-        // home 
+                // home main logo
+                img {
+                    object-position: center;
+                    object-fit: cover;
+                }
+            }
+        }
+        // end home right side css
     }
+    // end home page box css
 }
+
+// footer css
+.footer {
+    margin-top: 20px;
+}
+// end footer css
 // end home page css
