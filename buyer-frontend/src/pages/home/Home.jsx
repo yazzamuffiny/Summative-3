@@ -1,4 +1,6 @@
 import React from 'react'
+// home scss import
+import './home.scss'
 
 const Home = () => {
   const goToLogIn = async (e) => {
@@ -20,7 +22,7 @@ const Home = () => {
         {/* home header box */}
         <div className='home-header-box'>
           <h1 className='main-header'>PawMatch</h1>
-          <img className='pawmatch-green-logo' src="https://placehold.co/60" alt="placeholder" />
+          <img className='pawmatch-green-logo' src="https://placehold.co/100" alt="placeholder" />
         </div>
 
         {/* home text & btns box */}
