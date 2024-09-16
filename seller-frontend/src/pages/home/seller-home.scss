@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Hachi+Maru+Pop&family=Jua&display=swap');
+
+.seller-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.page-title {
+    background-color: white;
+    border-radius: 9px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+
+    h1 {
+        font-size: 4em;
+        font-family: "Hachi Maru Pop", cursive;
+    }
+}

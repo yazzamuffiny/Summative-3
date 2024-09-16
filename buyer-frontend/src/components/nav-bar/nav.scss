@@ -1,0 +1,24 @@
+
+.navbar {
+    background-color: white;
+    color: #349DD6;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    .logo {
+        width: 70px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .userInt {
+        display: flex;
+
+        button {
+            background-color: black;
+        }
+    }
+}
