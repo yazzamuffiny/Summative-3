@@ -11,6 +11,7 @@ import Footer from './components/footer/Footer'
 //page imports
 import Home from './pages/home/Home'
 import Listings from './pages/listings/Listings'
+import SignUp from './pages/sign-up/SignUp'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Routes>
           <Route exact path='/' element={<Home/>}/>
           <Route path='/listings' element={<Listings/>}/>
+          <Route path='/signup' element={<SignUp/>}></Route>
         </Routes>
       <Footer/>
     </BrowserRouter>
