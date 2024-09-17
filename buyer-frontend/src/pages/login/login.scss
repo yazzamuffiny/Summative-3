@@ -28,3 +28,162 @@
     box-sizing: border-box;
 }
 // end global reset
+
+// navbar css
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .userInt {
+        display: flex;
+        align-items: center;
+
+        button {
+            margin-left: 15px;
+            padding: 10px 22px;
+            border-radius: 50px;
+            background-color: #349DD6;
+            font-size: 2em;
+            font-family: "Jua", sans-serif;
+            color: #fff;
+            border: none;
+        }
+
+        span {
+            font-size: 2em;
+            font-family: "Jua", sans-serif;
+        }
+    }
+}
+// end nav css
+
+// login main box
+.login-page-box {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    // login left and right content boxes css
+    .login-left-content-box, .login-right-content-box {
+        padding: 25px;
+        border-radius: 50px;
+    }
+
+    // login left content css
+    .login-left-content-box {
+        width: 55%;
+
+        // header css
+        .header-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include white-box;
+
+            .main-header {
+                font-size: 5.625em;
+                font-family: "Hachi Maru Pop", cursive;
+            }
+
+        }
+        // end header css
+
+        // login form css
+        #login-form-box {
+            width: 70%;
+            margin-top: 20px;
+
+            @include white-box;
+
+            // login header
+            .login-subheader {
+                font-size: 52px;
+                font-family: 'Jua', sans-serif;
+                font-weight: 400;
+                text-align: center;
+            }
+
+            // login field & labels css
+            .login-fields-box {
+                margin: 10px;
+                display: flex;
+                flex-direction: column;
+
+                .form-label {
+                    margin-top: 15px;
+                    font-family: 'Afacad', sans-serif;
+                    font-size: 2em;
+                    font-weight: 400;
+                }
+
+                .form-field {
+                    margin-top: 10px;
+                    @include boxed-form-field;
+                }
+
+                .error {
+                    margin-top: 15px;
+                    font-family: 'Afacad', sans-serif;
+                    font-size: 1.4em;
+                    color: red;
+                    text-align: center;
+                }
+
+                // login btn box css
+                .login-btn-box {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    #login-btn {
+                        margin-top: 20px;
+                        padding: 10px 72px;
+                        border-radius: 50px;
+                        background-color: #349DD6;
+                        font-size: 2em;
+                        font-family: "Jua", sans-serif;
+                        color: #fff;
+                        border: none;
+                    }
+                }
+            }
+        }
+        // end login form css
+
+    }
+    // end login left content css
+
+    // login right content css
+    .login-right-content-box {
+        width: 45%;
+
+        .logo-box {
+            padding: 35px 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include white-box;
+
+            // home main logo
+            img {
+                object-position: center;
+                object-fit: cover;
+            }
+        }
+    }
+}
+// end of login main box
+
+// footer css
+footer {
+    margin-top: 20px;
+}
+// end of footer css
+
+
