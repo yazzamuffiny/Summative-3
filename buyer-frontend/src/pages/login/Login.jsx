@@ -66,7 +66,7 @@ const Login = () => {
                                 id='login-btn' 
                                 onClick={loginSubmit}
                                 disabled={isLoading}
-                                >Sign Up
+                                >Log In
                             </button>
                         </div>
                     </div>
