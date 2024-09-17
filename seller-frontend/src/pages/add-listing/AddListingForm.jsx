@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom"
 import './add-listing.scss'
 import { useState } from "react";
+import { useListingsContext } from "../../hooks/useListingsContext";
 import axios from "axios";
 
 const AddListingForm = () => {
+  const {dispatch} = useListingsContext();
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const user_id = localStorage.getItem('user_id');
   const navigate = useNavigate();
@@ -29,16 +31,14 @@ const AddListingForm = () => {
     formData.append('gender', gender);
     formData.append('size', size);
     formData.append('location', location);
-    formData.append('number', number);
-    formData.append('info', info);
+    formData.append('number_available', number);
+    formData.append('additional_info', info);
     formData.append('price', price);
     formData.append('user_id', user_id);
-    if (image) {
-      formData.append('image', image);
-    }
+    formData.append('image', image);
 
     try {
-      const response = await axios.post(`${baseURL}/api/`, formData, {
+      const response = await axios.post(`${baseURL}/api/listings/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -54,8 +54,7 @@ const AddListingForm = () => {
       setImage(null);
       setError(null);
       console.log('New listing added', response.data);
-      // dispatch({ type: 'CREATE_LISTINGS', payload: response.data }); // Uncomment if using Redux
-      navigate('/somewhere'); // Redirect after successful submission
+      dispatch({ type: 'CREATE_LISTINGS', payload: response.data }); // Uncomment if using Redux
     } catch (error) {
       setError(error.message);
     }
@@ -178,7 +177,7 @@ const AddListingForm = () => {
         </div>
         </div>
         {/* end of second input grid */}
-        <button type="submit">Add New Listing</button>
+        <button onClick={() => navigate(-1)}>Add New Listing</button>
         {error && <div className='error'>{error}</div>}
      
      {/* end of add listing form */}
