@@ -5,7 +5,8 @@
     height: 300px;
     display: flex;
     margin-bottom: 20px;
-    filter: drop-shadow(5px 5px 7px #000000);
+    border: 3px solid black;
+    transition: all 0.3s ease;
     .card-img {
         display: flex;
         justify-content: center;
@@ -49,4 +50,10 @@
             bottom: 10px;
         }
     }
+}
+.listing-card:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+    border: 3px solid #7AC898;
 }
