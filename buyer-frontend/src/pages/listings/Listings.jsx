@@ -48,16 +48,16 @@ const Listings = () => {
                 listing.breed.toLowerCase().includes(searchTerm.toLowerCase())
             )
             .filter(listing => 
-                (gender ? listing.gender === gender : true)
+                (gender ? listing.gender.toLowerCase() === gender.toLowerCase() : true)
             )
             .filter(listing => 
-                (age ? listing.age === age : true)
+                (age ? listing.age.toLowerCase() === age.toLowerCase() : true)
             )
             .filter(listing => 
-                (size ? listing.size === size : true)
+                (size ? listing.size.toLowerCase() === size.toLowerCase() : true)
             )
             .filter(listing => 
-                (location ? listing.location === location : true)
+                (location ? listing.location.toLowerCase() === location.toLowerCase() : true)
             )
         setSearchedListings(filteredListings)
     }, [searchTerm, gender, age, size, location, listings])
@@ -66,8 +66,8 @@ const Listings = () => {
   return (
     <div className='listings-page'>
         <div className='form-box'>
-            <div className='search-box'>
-                <label htmlFor='search'>Search Breed:</label>
+                <div className='search-box'>
+                <label className='search-header'htmlFor='search'>Search Breed:</label>
                 <input 
                     type='text' 
                     name='search'
@@ -77,6 +77,7 @@ const Listings = () => {
                 />
             </div>
             <div className='filter-box'>
+                <h3 className='search-header'>Filters:</h3>
                 {/* gender filter */}
                 <label htmlFor='gender'>Gender:</label>
                 <select 
@@ -98,12 +99,12 @@ const Listings = () => {
                     onChange={(event) => setAge(event.target.value)}
                 >
                     <option value=''>Please Select</option>
-                    <option value='baby'>2 months - 6 months</option>
-                    <option value='puppy'>6 month - 1 year</option>
-                    <option value='teen'>1 - 2 years</option>
-                    <option value='youngAdult'>2 - 5 years</option>
-                    <option value='adult'>5 - 10 years</option>
-                    <option value='senior'>10+ years</option>
+                    <option value='puppy'>Puppy</option>
+                    <option value='junior'>Junior</option>
+                    <option value='adult'>Adult</option>
+                    <option value='mature'>Mature</option>
+                    <option value='senior'>Senior</option>
+                    
                 </select>
                 {/* size filter */}
                 <label htmlFor='size'>Size:</label>
@@ -146,13 +147,19 @@ const Listings = () => {
                     <option value='southland'>Southland</option>
                 </select>
             </div>
+            </div>
+        <div className='page-header'>
+            <h3>Local Listings</h3>
         </div>
+        <div className='listing-box'>
+            
 
-        <div className='listings-display'>
-            {searchedListings.map((listing) => (
-                    <ListingDetails key={listing._id} listing={listing} />
-                ))}
-        </div>
+            <div className='listings-display'>
+                {searchedListings.map((listing) => (
+                        <ListingDetails key={listing._id} listing={listing} />
+                    ))}
+            </div>
+        </div>    
     </div>
   )
 }

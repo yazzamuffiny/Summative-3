@@ -12,6 +12,7 @@ import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
 import Listings from './pages/listings/Listings'
 import SignUp from './pages/sign-up/SignUp'
+import SingleListing from './pages/singlelisting/SingleListing'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route exact path='/' element={<Home/>}/>
           <Route path='/listings' element={<Listings/>}/>
           <Route path='/signup' element={<SignUp/>}></Route>
+          <Route path='/:id' element={<SingleListing/>}/>
         </Routes>
       <Footer/>
     </BrowserRouter>
