@@ -3,10 +3,187 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
+// mixins
+@mixin white-box {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 25px;
+    box-shadow: 5px 3px 3px 1px rgba(0,0,0,0.24);
+}
+
+@mixin boxed-form-field {
+    padding: 8px;
+    font-size: 1.625em;
+    font-family: 'Afacad', sans-serif;
+    border: solid 1px black;
+    border-radius: 15px;
+    text-indent: 8px;
+    box-shadow: 5px 3px 3px 1px rgba(0,0,0,0.24);
+}
+
 // global reset
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+// end global reset
+
+// navbar css
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .userInt {
+        display: flex;
+        align-items: center;
+
+        button {
+            margin-left: 15px;
+            padding: 10px 22px;
+            border-radius: 50px;
+            background-color: #349DD6;
+            font-size: 2em;
+            font-family: "Jua", sans-serif;
+            color: #fff;
+            border: none;
+        }
+
+        span {
+            font-size: 2em;
+            font-family: "Jua", sans-serif;
+        }
+    }
+}
+// end nav css
+
+// signup main box
+.signup-page-box {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    // signup left and right content boxes css
+    .signup-left-content-box, .signup-right-content-box {
+        padding: 25px;
+        border-radius: 50px;
+    }
+
+    // signup left content css
+    .signup-left-content-box {
+        width: 55%;
+
+        // header css
+        .header-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include white-box;
+
+            .main-header {
+                font-size: 5.625em;
+                font-family: "Hachi Maru Pop", cursive;
+            }
+
+        }
+        // end header css
+
+        // signup form css
+        #signup-form-box {
+            width: 70%;
+            margin-top: 20px;
+
+            @include white-box;
+
+            // signup header
+            .signup-subheader {
+                font-size: 52px;
+                font-family: 'Jua', sans-serif;
+                font-weight: 400;
+                text-align: center;
+            }
+
+            // signup field & labels css
+            .signup-fields-box {
+                margin: 10px;
+                display: flex;
+                flex-direction: column;
+
+                .form-label {
+                    margin-top: 15px;
+                    font-family: 'Afacad', sans-serif;
+                    font-size: 2em;
+                    font-weight: 400;
+                }
+
+                .form-field {
+                    margin-top: 10px;
+                    @include boxed-form-field;
+                }
+
+                .error {
+                    margin-top: 15px;
+                    font-family: 'Afacad', sans-serif;
+                    font-size: 1.4em;
+                    color: red;
+                    text-align: center;
+                }
+
+                // signup btn box css
+                .signup-btn-box {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    #signup-btn {
+                        margin-top: 20px;
+                        padding: 10px 72px;
+                        border-radius: 50px;
+                        background-color: #349DD6;
+                        font-size: 2em;
+                        font-family: "Jua", sans-serif;
+                        color: #fff;
+                        border: none;
+                    }
+                }
+            }
+        }
+        // end signup form css
+
+    }
+    // end signup left content css
+
+    // signup right content css
+    .signup-right-content-box {
+        width: 45%;
+
+        .logo-box {
+            padding: 35px 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include white-box;
+
+            // home main logo
+            img {
+                object-position: center;
+                object-fit: cover;
+            }
+        }
+    }
+}
+// end of signup main box
+
+// footer css
+footer {
+    margin-top: 20px;
+}
+// end of footer css
+
 
