@@ -6,13 +6,11 @@ const router = express.Router()
 
 // controller import
 const {
-    getComments,
     createComment
 } = require('../controllers/commentController')
 
 // http request
-router.get('/', getComments)
-router.post('/', createComment)
+router.post(`/listings/:listingId/comments`, createComment);
 
 // module export
 module.exports = router

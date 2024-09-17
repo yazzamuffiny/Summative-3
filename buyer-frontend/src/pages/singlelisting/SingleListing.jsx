@@ -14,9 +14,33 @@ const SingleListing = () => {
     const [listing, setListing] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [commentText, setCommentText] = useState('');
+
+    const user = JSON.parse(localStorage.getItem('user'))
 
     const { id } = useParams();
     const navigate = useNavigate();
+
+    const handleAddComment = async () => {
+        try {
+            const response = await axios.post(`${baseURL}/api/comments/listings/${listing._id}/comments`, 
+                {
+                    text: commentText,
+                    user_id: 'user.email',
+                }
+            )
+
+            const newComment = response.data;
+            setListing(prevListing => ({
+                ...prevListing,
+                comments: [...prevListing.comments, newComment]
+            }));
+
+            setCommentText('');
+        } catch (err) {
+            console.error("Failed to add comment", err)
+        }
+    }
 
     useEffect(() => {
         const fetchListings = async () => {
@@ -42,11 +66,13 @@ const SingleListing = () => {
 
     return (
         <div className='single-listing-page'>
-            <div className='single-listing-back-btn' onClick={handleBack}>
-                <FaChevronLeft /> Back
-            </div>
-            <div className='single-listing-header'>
-                <h2>{listing.breed}</h2>
+            <div className='single-page-top'>
+                <div className='single-listing-back-btn' onClick={handleBack}>
+                    <FaChevronLeft /> Back
+                </div>
+                <div className='single-listing-header'>
+                    <h2>{listing.breed}</h2>
+                </div>
             </div>
             <div className='single-page-img'>
                 <img src={listing.image} alt={`Image of ${listing.breed}`} />
@@ -72,9 +98,33 @@ const SingleListing = () => {
                     <h3>{listing.user_id}</h3>
                     <button>Contact Now</button>
                 </div>
-                <div className='comments-box'>
+                
+            </div>
+            <div className='comments-box'>
+            <h4>Comments</h4>
+            <div className='add-comment'>
+                <input
+                    type='text'
+                    value={commentText}
+                    onChange={(e) => setCommentText(e.target.value)}
+                    placeholder="Add a comment..."
+                />
+            <button onClick={handleAddComment}>Add Comment</button>
+            </div>
+                <div className='comments-list'>
+                  
+                        {listing.comments.map(comment => (
+                            <div key={comment._id} className='comment'>
+                                <p><strong>{comment.user_id}:</strong> {comment.text}</p>
+                                <p className='comment-date'>
+                                    {formatDistanceToNow(new Date(comment.createdAt), { includeSeconds: true })} ago
+                                </p>
+                            </div>
+                        ))}
                     
                 </div>
+                
+        
             </div>
         </div>
     );
