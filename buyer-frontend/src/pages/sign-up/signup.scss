@@ -150,6 +150,14 @@
                         color: #fff;
                         border: none;
                     }
+
+                    #signup-btn:hover {
+                        background-color: white;
+                        border: 2px solid #349DD6;
+                        color: #349DD6;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
                 }
             }
         }
@@ -185,5 +193,4 @@ footer {
     margin-top: 20px;
 }
 // end of footer css
-
 

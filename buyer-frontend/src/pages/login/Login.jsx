@@ -4,20 +4,21 @@ import { useState } from 'react'
 // import login hook
 import { useLogin } from '/src/hooks/useLogin'
 
-// import useNavigate
-import {useNavigate} from 'react-router-dom'
-
 // import login css
 import './login.scss'
 
 const Login = () => {
-  // navigate 
-  const navigate = useNavigate()
 
   // login state values 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {login, isLoading, error} = useLogin()
+
+  // submit login btn function
+  const loginSubmit = async (e) => {
+    e.preventDefault()
+    await login(email, password)
+  }
 
   return (
     <div>
@@ -34,7 +35,7 @@ const Login = () => {
                 </div>
 
                 {/* login form box */}
-                <form id='login-form-box' >
+                <form id='login-form-box' onSubmit={loginSubmit}>
                     <h3 className='login-subheader'>Log In</h3>
 
                     {/* login fields & label box */}
@@ -63,7 +64,7 @@ const Login = () => {
                         <div className='login-btn-box'>
                             <button 
                                 id='login-btn' 
-                                
+                                onClick={loginSubmit}
                                 disabled={isLoading}
                                 >Sign Up
                             </button>
