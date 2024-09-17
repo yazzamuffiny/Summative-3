@@ -11,13 +11,11 @@ const Home = () => {
 
   const NavigateLogIn = async (e) => {
     e.preventDefault()
-    console.log('log in btn is clicked')
     navigate(`/login`)
   }
 
   const NavigateSignUp = async (e) => {
     e.preventDefault()
-    console.log('sign up btn is clicked')
     navigate(`/signup`)
   }
 

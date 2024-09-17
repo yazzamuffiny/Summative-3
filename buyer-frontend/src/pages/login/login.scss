@@ -1,0 +1,30 @@
+// import google fonts
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+// mixins
+@mixin white-box {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 25px;
+    box-shadow: 5px 3px 3px 1px rgba(0,0,0,0.24);
+}
+
+@mixin boxed-form-field {
+    padding: 8px;
+    font-size: 1.625em;
+    font-family: 'Afacad', sans-serif;
+    border: solid 1px black;
+    border-radius: 15px;
+    text-indent: 8px;
+    box-shadow: 5px 3px 3px 1px rgba(0,0,0,0.24);
+}
+
+// global reset
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// end global reset
