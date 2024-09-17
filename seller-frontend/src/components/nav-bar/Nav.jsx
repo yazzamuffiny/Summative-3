@@ -1,14 +1,18 @@
 import { useLogout } from '../../hooks/useLogout';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import './nav.scss'
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
 
   const {logout} = useLogout();
   const {user} = useAuthContext();
 
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     logout();
+    navigate('/');
   }
 
   return (
@@ -21,7 +25,7 @@ const Nav = () => {
       <div className='logged-user'>
         {user && <div className="userInt">
           <span>{user.email}</span>
-          <button onClick={handleLogout}> Logout </button>
+          <button className='logout-btn' onClick={handleLogout}> Logout </button>
           </div>}
       </div>
     </div>
