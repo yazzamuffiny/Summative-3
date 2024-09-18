@@ -48,6 +48,7 @@ app.listen(port, () => {
     console.log(`Express Server running on http://localhost:${port}`)
 });
 
+app.use('/public', express.static('public'));
 
 //MONGO CONNECTION
 //mongo username and password
