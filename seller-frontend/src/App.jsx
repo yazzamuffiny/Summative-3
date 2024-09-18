@@ -10,7 +10,7 @@ import Footer from './components/footer/Footer'
 
 //page imports
 import Home from './pages/home/Home'
-// import Login from './pages/login/Login'
+import Login from './pages/login/Login'
 import AddListingForm from './pages/add-listing/AddListingForm'
 import SignUp from './pages/sign-up/SignUp'
 import SellerHome from './pages/seller-home/SellerHome'
@@ -24,7 +24,7 @@ const App = () => {
         <Routes>
           <Route exact path='/' element={<Home/>}/>
           <Route path='/signup' element={<SignUp/>}/>
-          {/* <Route path='/login' element={<Login/>}/> */}
+          <Route path='/login' element={<Login/>}/>
           <Route path='/add-listing' element={<AddListingForm/>}/>
           <Route path='/seller-home' element={<SellerHome/>}/>
           <Route path='/listings' element={<Listings/>}/>
