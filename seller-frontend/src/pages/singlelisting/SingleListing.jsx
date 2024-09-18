@@ -7,7 +7,6 @@ import axios from 'axios';
 import { formatDistanceToNow } from 'date-fns';
 
 import { FaChevronLeft } from "react-icons/fa";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
@@ -15,34 +14,14 @@ const SingleListing = () => {
     const [listing, setListing] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [commentText, setCommentText] = useState('');
-
-    const user = JSON.parse(localStorage.getItem('user'))
 
     const { id } = useParams();
     const navigate = useNavigate();
 
+    const handleEdit = () => {
+        navigate('/edit-listing');
+      };
 
-    const handleAddComment = async () => {
-        try {
-            const response = await axios.post(`${baseURL}/api/comments/listings/${listing._id}/comments`, 
-                {
-                    text: commentText,
-                    user_id: 'user.email',
-                }
-            )
-
-            const newComment = response.data;
-            setListing(prevListing => ({
-                ...prevListing,
-                comments: [...prevListing.comments, newComment]
-            }));
-
-            setCommentText('');
-        } catch (err) {
-            console.error("Failed to add comment", err)
-        }
-    }
 
     useEffect(() => {
         const fetchListings = async () => {
@@ -68,19 +47,19 @@ const SingleListing = () => {
 
     return (
         <div className='single-listing-page'>
-            <div className='single-page-top'>
-                <div className='single-listing-back-btn' onClick={handleBack}>
-                    <FaChevronLeft /> Back
-                </div>
-                <div className='single-listing-header'>
-                    <h2>{listing.breed}</h2>
-                </div>
+            <div className='single-listing-back-btn' onClick={handleBack}>
+                <FaChevronLeft /> Back
+            </div>
+            <div className='single-listing-header'>
+                <h2>{listing.breed}</h2>
             </div>
             <div className='single-page-img'>
                 <img src={listing.image} alt={`Image of ${listing.breed}`} />
             </div>
             <div className='single-page-info'>
                 <div className='listing-info'>
+                <button onClick={handleEdit}> edit listing shortcut </button>
+
                     <h3>{listing.breed}</h3>
                     <div className='listing-tags'>
                         <p className='gender-tag'>{listing.gender}</p>
@@ -100,30 +79,8 @@ const SingleListing = () => {
                     <h3>{listing.user_id}</h3>
                     <button>Contact Now</button>
                 </div>
-                
-            </div>
-            <div className='comments-box'>
-                <h2>Questions</h2>
-                <div className='add-comment'>
-                    <p>Ask a Question</p>
-                    <input
-                        type='text'
-                        value={commentText}
-                        onChange={(e) => setCommentText(e.target.value)}
-                        placeholder="Type Here..."
-                    />
-                    <button onClick={handleAddComment}><FaArrowRightLong /></button>
-                </div>
-                <div className='comments-list'>
-                    {listing.comments.map(comment => (
-                    <div key={comment._id} className='comment'>
-                        <h3>{comment.user_id}</h3>
-                        <p className='comment-text'>{comment.text}</p>
-                        <p className='comment-date'>
-                            {formatDistanceToNow(new Date(comment.createdAt), { includeSeconds: true })} ago
-                        </p>
-                    </div>
-                    ))}     
+                <div className='comments-box'>
+                    
                 </div>
             </div>
         </div>

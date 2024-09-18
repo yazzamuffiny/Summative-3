@@ -17,8 +17,18 @@
     .userInt {
         display: flex;
 
-        button {
-            background-color: black;
+        .logout-btn {
+            border: 3px solid #349DD6;
+            transition: all 0.3s ease;
+            font-size: 1.3em;
+        }
+
+        .logout-btn:hover {
+            background-color: white;
+            color: #349DD6;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid #349DD6;
         }
     }
 }

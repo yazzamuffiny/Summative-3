@@ -22,7 +22,7 @@ const Nav = () => {
       <div className='logged-user'>
         {user && <div className="userInt">
           <span>{user.email}</span>
-          <button onClick={handleLogout}> Logout </button>
+          <button className='logout-btn' onClick={handleLogout}> Logout </button>
           </div>}
       </div>
     </div>

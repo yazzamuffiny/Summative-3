@@ -1,29 +1,46 @@
 // comment model import
 const Comment = require('../models/commentModel')
+const Listing = require('../models/listingModel')
 
 // mongoose import 
 const mongoose = require('mongoose')
 
 // get all comments method
-const getComments = async (req, res) => {
-    const comments = await Comment.find({}).sort({createdAt: -1})
-    res.status(200).json(comments)
-}
+// const getComments = async (req, res) => {
+//     const comments = await Comment.find({}).sort({createdAt: -1})
+//     res.status(200).json(comments)
+// }
 
 // create comments method
 const createComment = async (req, res) => {
-    const {user_id, text} = req.body
+    const { listingId } = req.params;
 
     try {
-        const comment = await Comment.create({user_id, text})
-        res.status(200).json(comment)
+        const listing = await Listing.findById(listingId);
+
+        if (!listing) {
+            return res.status(404).json({ error: 'Listing not found' });
+        }
+
+        const newComment = new Comment({
+            text: req.body.text,
+            user_id: req.body.user_id
+        });
+
+        await newComment.save();
+
+        listing.comments.push(newComment);
+        await listing.save();
+
+        res.status(201).json(newComment);
+        
     } catch (error) {
-        res.status(400).json({error: error.message})
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
     }
 }
 
 // export functions
 module.exports = {
-    getComments,
     createComment
 }
