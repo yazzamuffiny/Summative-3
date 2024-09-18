@@ -126,6 +126,7 @@ const Home = () => {
                     <option value=''>Please Select</option>
                     <option value='male'>Male</option>
                     <option value='female'>Female</option>
+                    <option value='mixed'>Mixed</option>
                 </select>
                 {/* age filter */}
                 <label htmlFor='age'>Age:</label>

@@ -117,7 +117,21 @@ body {
                         font-size: 2em;
                         font-family: "Jua", sans-serif;
                         color: #fff;
-                        border: none;
+                        border: 3px solid #349DD6;
+                    }
+                    #go-to-sign-up-btn:hover {
+                        background-color: white;
+                        color: #349DD6;
+                        border: 3px solid #349DD6;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+                    }
+                    #go-to-log-in-btn:hover {
+                        background-color: white;
+                        color: #349DD6;
+                        border: 3px solid #349DD6;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
                     }
                 }
             }

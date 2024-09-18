@@ -6,7 +6,6 @@ import { useSignup } from '/src/hooks/useSignup'
 
 // import signup css
 import './signup.scss'
-import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
     // signup state values
@@ -14,13 +13,10 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const {signup, isLoading, error} = useSignup()
 
-    const navigate = useNavigate();
-
     // submit signup btn function
     const signUpSubmit = async (e) => {
         e.preventDefault()
         await signup(email, password)
-        navigate('/seller-home');
     }
 
   return (
