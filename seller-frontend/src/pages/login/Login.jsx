@@ -1,31 +1,32 @@
 // import useState
 import { useState } from 'react'
 
-// import signup hook
-import { useSignup } from '/src/hooks/useSignup'
+// import login hook
+import { useLogin } from '/src/hooks/useLogin'
 
-// import signup css
-import './signup.scss'
+// import login css
+import './login.scss'
 
-const SignUp = () => {
-    // signup state values
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const {signup, isLoading, error} = useSignup()
+const Login = () => {
 
-    // submit signup btn function
-    const signUpSubmit = async (e) => {
-        e.preventDefault()
-        await signup(email, password)
-    }
+  // login state values 
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const {login, isLoading, error} = useLogin()
+
+  // submit login btn function
+  const loginSubmit = async (e) => {
+    e.preventDefault()
+    await login(email, password)
+  }
 
   return (
-    <>
-        {/* signup page main box */}
-        <div className='signup-page-box'>
+    <div>
+      {/* login page main box */}
+        <div className='login-page-box'>
 
-            {/* signup left content box */}
-            <div className='signup-left-content-box'>
+            {/* login left content box */}
+            <div className='login-left-content-box'>
 
                 {/* header box w/ logo  */}
                 <div className='header-box'>
@@ -33,13 +34,13 @@ const SignUp = () => {
                     <img className='pawmatch-green-logo' src="src/images/green-pawprint.svg" alt="placeholder" />
                 </div>
 
-                {/* signup form box */}
-                <form id='signup-form-box' onSubmit={signUpSubmit}>
-                    <h3 className='signup-subheader'>Sign Up</h3>
+                {/* login form box */}
+                <form id='login-form-box' onSubmit={loginSubmit}>
+                    <h3 className='login-subheader'>Log In</h3>
 
-                    {/* signup fields & label box */}
-                    <div className='signup-fields-box'>
-                        {/* signup field & label */}
+                    {/* login fields & label box */}
+                    <div className='login-fields-box'>
+                        {/* login field & label */}
                         <label className='form-label'>Email Address:</label>
                         <input 
                             className='form-field' 
@@ -48,7 +49,7 @@ const SignUp = () => {
                             value={email}
                         />
 
-                        {/* signup field & label */}
+                        {/* login field & label */}
                         <label className='form-label'>Password:</label>
                         <input 
                             className='form-field' 
@@ -59,29 +60,29 @@ const SignUp = () => {
 
                         {error && <div className='error'>{error}</div>}
 
-                        {/* signup btn box */}
-                        <div className='signup-btn-box'>
+                        {/* login btn box */}
+                        <div className='login-btn-box'>
                             <button 
-                                id='signup-btn' 
-                                onClick={signUpSubmit}
+                                id='login-btn' 
+                                onClick={loginSubmit}
                                 disabled={isLoading}
-                                >Sign Up
+                                >Log In
                             </button>
                         </div>
                     </div>
                 </form>
             </div>
 
-            {/* signup right content box */}
-            <div className='signup-right-content-box'>
+            {/* login right content box */}
+            <div className='login-right-content-box'>
                 <div className='logo-box'>
                 <img src="src/images/logo-no-bg.png" alt="pawmatch logo" />
                 </div>
             </div>
 
         </div>
-    </>
+    </div>
   )
 }
 
-export default SignUp
+export default Login
