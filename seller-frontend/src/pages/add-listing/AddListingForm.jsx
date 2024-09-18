@@ -3,6 +3,8 @@ import './add-listing.scss'
 import { useState } from "react";
 import { useListingsContext } from "../../hooks/useListingsContext";
 import axios from "axios";
+import { FaChevronLeft } from "react-icons/fa";
+
 
 const AddListingForm = () => {
   const {dispatch} = useListingsContext();
@@ -24,6 +26,8 @@ const AddListingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('added');
+    const user = JSON.parse(localStorage.getItem('user'));
+    const user_id = user.email
 
     const formData = new FormData();
     formData.append('breed', breed);
@@ -59,13 +63,17 @@ const AddListingForm = () => {
       setError(error.message);
     }
   };
+  const handleBack = () => {
+    navigate(-1);
+};
 
   return (
     <div className='add-listing-page'>
       {/* back button and title */}
       <div className='backbtn-title'>
-      <button onClick={() => navigate(-1)} className='back-button'> Back </button>
-      <h1> Add New Listing </h1>
+        <div className='back-btn' onClick={handleBack}>
+          <FaChevronLeft /> Back </div>      
+        <h1> Add New Listing </h1>
       </div>
 
       {/* add new listing form */}
