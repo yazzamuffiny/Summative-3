@@ -12,6 +12,7 @@ import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
 import Listings from './pages/listings/Listings'
 import SignUp from './pages/sign-up/SignUp'
+import Login from './pages/login/Login'
 import SingleListing from './pages/singlelisting/SingleListing'
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route exact path='/' element={<Home/>}/>
           <Route path='/listings' element={<Listings/>}/>
           <Route path='/signup' element={<SignUp/>}></Route>
+          <Route path='/login' element={<Login/>}></Route>
           <Route path='/:id' element={<SingleListing/>}/>
         </Routes>
       <Footer/>
