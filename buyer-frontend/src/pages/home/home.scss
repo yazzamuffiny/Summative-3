@@ -119,6 +119,14 @@ body {
                         color: #fff;
                         border: none;
                     }
+
+                    #go-to-sign-up-btn:hover, #go-to-log-in-btn:hover {
+                        background-color: white;
+                        border: 2px solid #349DD6;
+                        color: #349DD6;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
                 }
             }
         }
