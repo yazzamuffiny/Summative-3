@@ -12,20 +12,33 @@ const baseURL = import.meta.env.VITE_API_BASE_URL
 
 
 const Home = () => {
-
-  // for button navigation
+// DEFINITION OF VARIABLES
   const navigate = useNavigate()
+  const [listings, setListings] = useState([])
+  const [ searchedListings, setSearchedListings ] = useState([])
+  const [showMyListings, setShowMyListings] = useState(false);
+  const [ searchTerm, setSearchTerm ] = useState('')
+  const [ gender, setGender ] = useState('')
+  const [ age, setAge ] = useState('')
+  const [ size, setSize ] = useState('')
+  const [ location, setLocation ] = useState('')
 
+  const user = JSON.parse(localStorage.getItem('user'));
+  const userId = user ? user._id : null;
+
+//   FUNCTIONS
   const handleAdd = () => {
     navigate('/add-listing');
   };
 
-  const handleEdit = () => {
-    navigate('/edit-listing');
+  const handleShowMyListings = () => {
+    setShowMyListings(true);
   };
-  // end of button navigation
 
-  // for clearing the filters
+  const handleShowAllListings = () => {
+    setShowMyListings(false);
+  };
+
   const handleClearFilters = () => {
     setSearchTerm('');
     setGender('');
@@ -33,19 +46,6 @@ const Home = () => {
     setSize('');
     setLocation('');
 };
-// end of clearing the filters
-
-
-  // for the listings
-  const [listings, setListings] = useState([])
-
-    const [ searchTerm, setSearchTerm ] = useState('')
-    const [ gender, setGender ] = useState('')
-    const [ age, setAge ] = useState('')
-    const [ size, setSize ] = useState('')
-    const [ location, setLocation ] = useState('')
-
-    const [ searchedListings, setSearchedListings ] = useState([])
 
     useEffect (() => {
       const fetchListings = async () => {
@@ -66,6 +66,8 @@ const Home = () => {
   useEffect(() => {
     const filteredListings = listings
         .filter(listing => 
+            (showMyListings ? listing.user_id === userId : true))
+        .filter(listing => 
             listing.breed.toLowerCase().includes(searchTerm.toLowerCase())
         )
         .filter(listing => 
@@ -81,8 +83,7 @@ const Home = () => {
             (location ? listing.location === location : true)
         )
     setSearchedListings(filteredListings)
-}, [searchTerm, gender, age, size, location, listings])
-
+}, [showMyListings, searchTerm, gender, age, size, location, listings, userId]);
 
 
   return (
@@ -97,8 +98,8 @@ const Home = () => {
          <div className='create-and-filter-box'>
           <h2> Create & Filter </h2>
           <button onClick={handleAdd}> + Add a Listing </button>
-          <button> My Listings </button>
-          <button> All Listings </button>
+          <button onClick={handleShowMyListings}> My Listings </button>
+          <button onClick={handleShowAllListings}> All Listings </button>
         </div>
 
         <div className='form-box'>
@@ -199,6 +200,21 @@ const Home = () => {
             {searchedListings.map((listing) => (
                     <ListingDetails key={listing._id} listing={listing} />
                 ))}
+
+{showMyListings ? (listings && listings.map((listing) => {
+                    const user = JSON.parse(localStorage.getItem('user'))
+                    const user_id = user.email
+                    if (listing.user_id === user_id) {
+                        return (
+                            <ListingDetails key={listing._id} listing={listing}/>
+                        )
+                    }
+                })) : (listings && listings.map((listing) => {
+                    return (
+                        <ListingDetails key={listing._id} listing={listing}/>
+                    )
+                })
+            )}
         </div>
 
       </div>
