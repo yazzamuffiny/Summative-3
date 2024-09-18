@@ -50,7 +50,7 @@ const Home = () => {
           <div className='home-right-content-box'>
             {/* home logo box */}
             <div className='home-logo-box'>
-              <img src="src/images/logo-no-bg.png" alt="pawmatch logo" />
+            <img src="src/images/dog-gif.gif" alt="pawmatch logo" />
             </div>
           </div>
         </div>
