@@ -14,12 +14,13 @@ const SingleListing = () => {
     const [listing, setListing] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [isEditing, setIsEditing] = useState(null);
 
     const { id } = useParams();
     const navigate = useNavigate();
 
     const handleEdit = () => {
-        navigate('/edit-listing');
+        setIsEditing(true);
       };
 
 
@@ -47,18 +48,24 @@ const SingleListing = () => {
 
     return (
         <div className='single-listing-page'>
+            <div className='single-page-top'>
             <div className='single-listing-back-btn' onClick={handleBack}>
                 <FaChevronLeft /> Back
             </div>
             <div className='single-listing-header'>
                 <h2>{listing.breed}</h2>
             </div>
+            </div>
             <div className='single-page-img'>
                 <img src={listing.image} alt={`Image of ${listing.breed}`} />
             </div>
             <div className='single-page-info'>
                 <div className='listing-info'>
-                <button onClick={handleEdit}> edit listing shortcut </button>
+                <button onClick={handleEdit}> Edit Listing </button>
+
+                <form className='edit-form'>
+
+                </form>
 
                     <h3>{listing.breed}</h3>
                     <div className='listing-tags'>
@@ -79,10 +86,10 @@ const SingleListing = () => {
                     <h3>{listing.user_id}</h3>
                     <button>Contact Now</button>
                 </div>
-                <div className='comments-box'>
+            </div>
+            <div className='comments-box'>
                     
                 </div>
-            </div>
         </div>
     );
 };

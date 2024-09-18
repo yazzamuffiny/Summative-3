@@ -15,6 +15,7 @@ import SellerHome from './pages/seller-home/SellerHome'
 import Listings from './pages/listings/Listings'
 import SingleListing from './pages/singlelisting/SingleListing'
 import EditListingForm from './pages/edit-listing/EditListingForm'
+import AddListingForm from './pages/add-listing/AddListingForm'
 
 const App = () => {
   return (
@@ -25,7 +26,8 @@ const App = () => {
           <Route path='/seller-home' element={<SellerHome/>}/>
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/listings' element={<Listings/>}/>
-          <Route path='/edit-listing' element={<EditListingForm/>}/>
+          <Route path='/edit-listing/:id' element={<EditListingForm/>}/>
+          <Route path='/add-listing' element={<AddListingForm/>}/>
           <Route path='/:id' element={<SingleListing/>}/>
         </Routes>
       <Footer/>

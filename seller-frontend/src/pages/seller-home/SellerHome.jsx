@@ -19,10 +19,6 @@ const Home = () => {
   const handleAdd = () => {
     navigate('/add-listing');
   };
-
-  const handleEdit = () => {
-    navigate('/edit-listing');
-  };
   // end of button navigation
 
   // for clearing the filters
@@ -46,6 +42,7 @@ const Home = () => {
     const [ location, setLocation ] = useState('')
 
     const [ searchedListings, setSearchedListings ] = useState([])
+
 
     useEffect (() => {
       const fetchListings = async () => {
