@@ -4,15 +4,10 @@ import { useState } from 'react'
 // import signup hook
 import { useSignup } from '/src/hooks/useSignup'
 
-// import useNavigate
-import {useNavigate} from 'react-router-dom'
-
 // import signup css
 import './signup.scss'
 
 const SignUp = () => {
-    // navigate
-    const navigate = useNavigate()
 
     // signup state values
     const [email, setEmail] = useState('')
@@ -23,7 +18,6 @@ const SignUp = () => {
     const signUpSubmit = async (e) => {
         e.preventDefault()
         await signup(email, password)
-        navigate(`/listings`)
     }
 
   return (

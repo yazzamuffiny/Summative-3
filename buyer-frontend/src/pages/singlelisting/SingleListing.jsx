@@ -7,6 +7,7 @@ import axios from 'axios';
 import { formatDistanceToNow } from 'date-fns';
 
 import { FaChevronLeft } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
@@ -20,6 +21,7 @@ const SingleListing = () => {
 
     const { id } = useParams();
     const navigate = useNavigate();
+
 
     const handleAddComment = async () => {
         try {
@@ -101,30 +103,28 @@ const SingleListing = () => {
                 
             </div>
             <div className='comments-box'>
-            <h4>Comments</h4>
-            <div className='add-comment'>
-                <input
-                    type='text'
-                    value={commentText}
-                    onChange={(e) => setCommentText(e.target.value)}
-                    placeholder="Add a comment..."
-                />
-            <button onClick={handleAddComment}>Add Comment</button>
-            </div>
-                <div className='comments-list'>
-                  
-                        {listing.comments.map(comment => (
-                            <div key={comment._id} className='comment'>
-                                <p><strong>{comment.user_id}:</strong> {comment.text}</p>
-                                <p className='comment-date'>
-                                    {formatDistanceToNow(new Date(comment.createdAt), { includeSeconds: true })} ago
-                                </p>
-                            </div>
-                        ))}
-                    
+                <h2>Questions</h2>
+                <div className='add-comment'>
+                    <p>Ask a Question</p>
+                    <input
+                        type='text'
+                        value={commentText}
+                        onChange={(e) => setCommentText(e.target.value)}
+                        placeholder="Type Here..."
+                    />
+                    <button onClick={handleAddComment}><FaArrowRightLong /></button>
                 </div>
-                
-        
+                <div className='comments-list'>
+                    {listing.comments.map(comment => (
+                    <div key={comment._id} className='comment'>
+                        <h3>{comment.user_id}</h3>
+                        <p className='comment-text'>{comment.text}</p>
+                        <p className='comment-date'>
+                            {formatDistanceToNow(new Date(comment.createdAt), { includeSeconds: true })} ago
+                        </p>
+                    </div>
+                    ))}     
+                </div>
             </div>
         </div>
     );
