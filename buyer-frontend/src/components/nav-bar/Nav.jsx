@@ -1,5 +1,7 @@
 import { useLogout } from '../../hooks/useLogout';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { useNavigate } from 'react-router-dom';
+
 import './nav.scss'
 
 const Nav = () => {
@@ -7,8 +9,11 @@ const Nav = () => {
   const {logout} = useLogout();
   const {user} = useAuthContext();
 
+  const navigate = useNavigate()
+
   const handleLogout = () => {
     logout();
+    navigate('/')
   }
 
   return (
