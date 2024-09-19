@@ -38,6 +38,8 @@ const SingleListing = () => {
   
     const user = JSON.parse(localStorage.getItem('user'))
 
+    const logged_user = user.email
+
     const { id } = useParams()
 
 
@@ -45,7 +47,7 @@ const SingleListing = () => {
         const fetchListing = async () => {
             try {
                 const response = await axios.get(`${baseURL}/api/listings/${id}`);
-                console.log("Listing data:", response.data);
+                console.log(user)
                 setListing(response.data);
                 setLoading(false)
             } catch (error) {
@@ -107,6 +109,15 @@ const SingleListing = () => {
         setIsEditing(false)
    }
 
+    const handleDelete = async () => {
+        const response = await axios.delete(`${baseURL}/api/listings/${listing._id}`)
+        const json = await response.data
+        if(response.status === 200) {
+            dispatch({type: 'DELETE_LISTING', payload: json})
+            navigate(-1)
+        }
+}
+
 
     const handleBack = () => {
         navigate(-1);
@@ -118,7 +129,7 @@ const SingleListing = () => {
               `http://localhost:4000/api/comments/listings/${listing._id}/comments`,
               {
                   text: commentText,
-                  user_id: user.email,
+                  user_id: logged_user,
               }
           );
   
@@ -272,7 +283,11 @@ const SingleListing = () => {
                 </div>
                 <div className='single-page-info'>
                     <div className='listing-info'>
-                        <button onClick={handleEditState}>Edit Listing Shortcut</button>
+                        {listing.user_id === logged_user && (
+                            <>
+                                <FaTrashCan className='delete' onClick={handleDelete}/>
+                            </>
+                        )}
                         <h3>{listing.breed}</h3>
                         <div className='listing-tags'>
                             <p className='gender-tag'>{listing.gender.toUpperCase()}</p>

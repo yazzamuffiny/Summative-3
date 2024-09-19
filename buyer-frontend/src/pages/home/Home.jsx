@@ -19,6 +19,11 @@ const Home = () => {
     navigate(`/signup`)
   }
 
+  const navigateListings = async (e) => {
+    e.preventDefault()
+    navigate(`/listings`)
+  }
+
   return (
     <>
       <div className='home-page-main-box'>
@@ -42,6 +47,7 @@ const Home = () => {
               <div className='home-btns-box'>
                 <button id='go-to-sign-up-btn' onClick={NavigateSignUp}>Sign Up</button>
                 <button id='go-to-log-in-btn' onClick={NavigateLogIn}>Log In</button>
+                <button id='go-to-listings' onClick={navigateListings}>Skip</button>
               </div>
             </div>
           </div>
