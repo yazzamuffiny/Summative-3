@@ -1,15 +1,11 @@
 footer {
     background-color: white;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    text-align: center;
     padding: 10px;
-    position: fixed;
+    position: sticky; // possibly change back later
     bottom: 0;
     width: 100%;
     font-family: "Afacad", sans-serif;
-    h4 {
-        margin-right: 20px;
-    }
 }
