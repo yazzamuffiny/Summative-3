@@ -29,7 +29,7 @@ const Home = () => {
             {/* home header box */}
             <div className='home-header-box'>
               <h1 className='main-header'>PawMatch</h1>
-              <img className='pawmatch-green-logo' src="https://placehold.co/100" alt="placeholder" />
+              <img className='pawmatch-green-logo' src="src/images/green-pawprint.svg" alt="placeholder" />
             </div>
 
             {/* home text & btns box */}
