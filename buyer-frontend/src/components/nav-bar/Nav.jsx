@@ -11,16 +11,20 @@ const Nav = () => {
 
   const navigate = useNavigate()
 
+  const navigateHome = () => {
+    navigate('/')
+  }
+
   const handleLogout = () => {
     logout();
-    navigate('/')
+    navigate('/');
   }
 
   return (
     <div className='navbar'>
 
-      <div className='logo'>
-        <img src="src/images/logo-no-bg.png" alt="website logo"/>
+      <div className='logo' >
+        <img src="src/images/logo-no-bg.png" alt="website logo" onClick={navigateHome}/>
       </div>
 
       {/* change this to the login signup buttons */}

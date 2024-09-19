@@ -2,8 +2,9 @@
 import './app.scss'
 
 //package imports
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 
+import { useAuthContext } from './hooks/useAuthContext'
 // component imports
 import Nav from './components/nav-bar/Nav'
 import Footer from './components/footer/Footer'
@@ -15,7 +16,11 @@ import SignUp from './pages/sign-up/SignUp'
 import Login from './pages/login/Login'
 import SingleListing from './pages/singlelisting/SingleListing'
 
+
 const App = () => {
+
+  const {user} = useAuthContext()
+
   return (
     <BrowserRouter>
       <Nav/>
@@ -24,7 +29,7 @@ const App = () => {
           <Route path='/listings' element={<Listings/>}/>
           <Route path='/signup' element={<SignUp/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
-          <Route path='/:id' element={<SingleListing/>}/>
+          <Route path='/:id' element={user ? <SingleListing /> : <Navigate to="/signup" />} />
         </Routes>
       <Footer/>
     </BrowserRouter>
