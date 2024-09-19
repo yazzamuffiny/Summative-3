@@ -1,5 +1,281 @@
 .single-listing-page {
-    background-color: aqua;
-    height: 100px;
-    width: 100px;
+    margin-top: 20px;
+    .edit-title {
+        background-color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4em;
+        font-family: "Hachi Maru Pop", cursive;
+        border-radius: 50px;
+        margin: 10px 100px;
+        box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+    }
+    .form-edit-page {
+        background-color: white;
+        padding: 50px;
+        margin: 50px;
+        border-radius: 50px;
+        box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        h2 {
+            font-size: 3em;
+            font-family: 'Jua', sans-serif;
+        }
+        .dog-form-info-edit, .listing-form-edit-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            .form-column {
+                display: flex;
+                flex-direction: column;
+                label {
+                    font-size: 2em;
+                }
+                input, select {
+                    height: 40px;
+                    border-radius: 50px;
+                    padding: 10px;
+                    width: 400px;
+                    border: 2px solid black;
+                    box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+                    -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+                    -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+                }
+            }
+        }
+        .form-button-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+            button {
+                font-family: 'Jua', sans-serif;
+                color: white;
+                border-radius: 50px;
+                padding: 10px 20px;
+                width: 300px;
+                height: 80px;
+                font-size: 2em;
+                background-color: #349DD6; 
+                border: 3px solid #349DD6;
+                box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+                -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+                transition: all 0.3s ease;
+            }
+            button:hover {
+                cursor: pointer;
+                background-color: white;
+                color: #349DD6;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+    .single-page-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .single-listing-back-btn {
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 50px;
+            padding: 10px 20px;
+            width: 150px;
+            height: 80px;
+            font-size: 2em;
+            border: 3px solid #349DD6;
+            box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            transition: all 0.3s ease;
+        }
+        .single-listing-back-btn:hover {
+            cursor: pointer;
+            background-color: white;
+            color: #349DD6;
+            transition: all 0.3s ease;
+        }
+        .single-listing-header {
+            background-color: white;
+            padding: 10px 20px;
+            font-size: 3em;
+            font-family: "Hachi Maru Pop", cursive;
+            border-radius: 50px;
+            box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        }
+    }
+    .single-page-img {
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        }
+    }
+
+    .single-page-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .listing-info {
+            background-color: white;
+            border-radius: 50px;
+            padding: 40px;
+            box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            h3 {
+                font-family: "Hachi Maru Pop", cursive;
+                font-size: 2em;
+            }
+            .listing-tags {
+                display: flex;
+                gap: 5px;
+                .gender-tag {
+                    margin: 10px;
+                    border-radius: 50px;
+                    padding: 10px 20px;
+                    background-color: #3EC2D9;
+                }
+                .age-tag{
+                    margin: 10px;
+                    border-radius: 50px;
+                    padding: 10px 20px;
+                    background-color: #ADD35A;
+                }
+                .available-tag {
+                    margin: 10px;
+                    border-radius: 50px;
+                    padding: 10px 20px;
+                    background-color: #7AC898;
+                }
+                .price-tag {
+                    margin: 10px;
+                    border-radius: 50px;
+                    padding: 10px 20px;
+                    background-color: #3EC2D9;
+                }
+                .size-tag {
+                    margin: 10px;
+                    border-radius: 50px;
+                    padding: 10px 20px;
+                    background-color: #ADD35A;
+                }
+                .location-tag {
+                    margin: 10px;
+                    border-radius: 50px;
+                    padding: 10px 20px;
+                    background-color: #7AC898;
+                }
+            }
+            h4 {
+                font-size: 1.5em;
+            }
+        }
+        .seller-info {
+            background-color: white;
+            padding: 50px;
+            border-radius: 50px;
+            box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+            h3 {
+                text-align: center;
+                font-size: 1.5em;
+                font-family: 'Jua', sans serif;
+            }
+            button {
+                margin-top: 10px;
+                font-family: 'Jua', sans serif;
+                font-size: 1.5em;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 50px;
+                background-color: #349DD6;
+                border: 3px solid #349DD6;
+                color: white;
+                transition: all 0.3s ease;
+            }
+            button:hover {
+                cursor: pointer;
+                background-color: white;
+                color: #349DD6;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+    .comments-box {
+        margin: 20px 150px;
+        border-radius: 50px;
+        background-color: white;
+        box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        
+        h2 {
+            padding: 50px 50px 0px 50px;
+            font-size: 3em;
+            font-family: 'Jua', sans serif;
+        }
+        .add-comment {
+            position: relative;
+            padding: 50px;
+            border-bottom: solid 3px black;
+            p {
+                font-family: 'Jua', sans-serif;
+                font-size: 1.5em;
+            }
+            input {
+                width: 100%;
+                padding: 20px;
+                border-radius: 20px;
+                border: 3px solid #7AC898;
+            }
+            button {
+                position: absolute;
+                cursor: pointer;
+                z-index: 10;
+                top: 95px;
+                right: 80px;
+                background-color: white;
+                border: none;
+                color: #7AC898;
+                font-size: 2em;
+            }
+            button:hover {
+                color: #3f7a56;
+            }
+        }
+        .comments-list {
+            padding: 50px;
+            .comment {
+                border: 3px solid black;
+                padding: 30px;
+                margin-bottom: 10px;
+                border-radius: 30px;
+                h3 {
+                    font-size: 2em;
+                    font-family: 'Jua', sans-serif;
+                }
+                .comment-text {
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+   
 }

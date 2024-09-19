@@ -8,7 +8,8 @@ const ListingDetails = ({ listing }) => {
 
   // Handle navigation to the detail page of the listing
   const handleNavigate = () => {
-    navigate(`/${listing._id}`);
+    let path = `/${listing._id}`
+    navigate(path);
   };
 
   return (
