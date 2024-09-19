@@ -108,6 +108,18 @@
 }
 
 @media screen and (min-width: 1080px) {
+    .listing-card {
+        width: 800px;
+        flex-direction: row;
+
+        .card-img img {
+            width: 90%;
+            height: 300px;
+        }
+        .card-info {
+            width: 50%;
+        }
+    }
     .listing-card:hover {
         scale: 1.1;
         cursor: pointer;
