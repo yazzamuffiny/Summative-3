@@ -3,12 +3,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
+// mixins
+@mixin white-box {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 25px;
+    box-shadow: 5px 3px 3px 1px rgba(0, 0, 0, 0.24);
+}
+
+@mixin boxed-form-field {
+    padding: 8px;
+    font-size: 1.625em;
+    font-family: 'Afacad', sans-serif;
+    border: solid 1px black;
+    border-radius: 15px;
+    text-indent: 8px;
+    box-shadow: 5px 3px 3px 1px rgba(0, 0, 0, 0.24);
+}
+
 // global reset
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 // end global reset
 
 // nav css
@@ -39,6 +58,7 @@ body {
         }
     }
 }
+
 // end nav css
 
 // home page css
@@ -55,52 +75,53 @@ body {
         justify-content: center;
         width: 100%;
         height: 100vh;
-    
+
         // home left & right side css
-        .home-left-content-box, .home-right-content-box {
+        .home-left-content-box,
+        .home-right-content-box {
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
+
         // end home left & right side css
-    
+
         // home left side css
         .home-left-content-box {
             width: 55%;
-    
+
             // header box css 
             .home-header-box {
                 width: 80%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 25px;
-                background-color: #fff;
-                border-radius: 50px;
-    
+
+                @include white-box();
+
                 // main header css
                 .main-header {
                     font-size: 5.625em;
                     font-family: "Hachi Maru Pop", cursive;
                 }
             }
-    
+
             // home content box css
             .home-content-box {
                 width: 80%;
                 padding: 25px;
                 margin-top: 46px;
-                background-color: #fff;
-                border-radius: 50px;
-    
+
+                @include white-box();
+
                 // home text box
                 .home-text-box {
                     font-size: 2em;
-                  font-family: "Afacad", sans-serif;
+                    font-family: "Afacad", sans-serif;
                 }
-    
+
                 // home btns box
                 .home-btns-box {
                     display: flex;
@@ -108,40 +129,37 @@ body {
                     justify-content: space-evenly;
                     margin-top: 35px;
                     margin-bottom: 20px;
-    
+
                     // sign up & log in btns css
-                    #go-to-sign-up-btn, #go-to-log-in-btn {
+                    #go-to-sign-up-btn,
+                    #go-to-log-in-btn {
                         padding: 10px 72px;
                         border-radius: 50px;
                         background-color: #349DD6;
                         font-size: 2em;
                         font-family: "Jua", sans-serif;
                         color: #fff;
-                        border: 3px solid #349DD6;
+                        border: 2px solid #349DD6;
                     }
-                    #go-to-sign-up-btn:hover {
-                        background-color: white;
-                        color: #349DD6;
-                        border: 3px solid #349DD6;
-                        transition: all 0.3s ease;
-                        cursor: pointer;
-                    }
+
+                    #go-to-sign-up-btn:hover,
                     #go-to-log-in-btn:hover {
                         background-color: white;
+                        border: 2px solid #349DD6;
                         color: #349DD6;
-                        border: 3px solid #349DD6;
-                        transition: all 0.3s ease;
                         cursor: pointer;
+                        transition: all 0.3s ease;
                     }
                 }
             }
         }
+
         // end home left side css
-    
+
         // home right side css
         .home-right-content-box {
             width: 45%;
-    
+
             // home logo box
             .home-logo-box {
                 width: 500px;
@@ -149,8 +167,8 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: #fff;
-                border-radius: 50px;
+
+                @include white-box();
 
                 // home main logo
                 img {
@@ -159,8 +177,10 @@ body {
                 }
             }
         }
+
         // end home right side css
     }
+
     // end home page box css
 }
 
@@ -168,5 +188,201 @@ body {
 .footer {
     margin-top: 20px;
 }
+
 // end footer css
 // end home page css
+
+// media queries
+// laptop media queries - min-width 1080px
+@media screen and (min-width: 1080px) {
+
+    // body css
+    body {
+        height: auto;
+
+        // main home box css
+        .home-page-main-box {
+            height: 100%;
+
+            .home-page-box {
+                flex-direction: flex;
+                padding: 25px;
+
+                .home-left-content-box {
+                    padding: 25px;
+                    width: 55%;
+
+                    .home-header-box {
+                        padding: 25px;
+                        width: 100%;
+
+                        .main-header {
+                            font-size: 4.3em;
+                        }
+
+                        .pawmatch-green-logo {
+                            width: 75px;
+                        }
+                    }
+
+                    .home-content-box {
+                        width: auto;
+                    }
+                }
+
+                .home-right-content-box {
+                    width: 45%;
+
+                    .home-logo-box {
+                        margin-top: 50px;
+                        width: auto;
+                        height: auto;
+                        padding: 25px;
+    
+                        img {
+                            width: 350px;
+                        }
+                    }
+                }
+
+
+                
+
+                
+
+
+            }
+        }
+
+        // end main home box css
+    }
+
+    // end body css
+}
+
+// tablet media queries - min-width 900px
+@media screen and (min-width: 900px) and (max-width: 1079px) {
+
+    // body css
+    body {
+        height: auto;
+
+        // main home box css
+        .home-page-main-box {
+            height: 100%;
+            padding: 150px 20px;
+
+            .home-page-box {
+                flex-direction: column;
+
+                // home left & right box css
+                .home-left-content-box,
+                .home-right-content-box {
+                    width: 100%;
+
+                    .home-header-box {
+                        .pawmatch-green-logo {
+                            width: 90px;
+                        }
+                    }
+
+                    .home-logo-box {
+                        margin-top: 50px;
+                        width: auto;
+                        height: auto;
+                        padding: 25px;
+
+                        img {
+                            width: 350px;
+                        }
+                    }
+                }
+
+                // end home left & right box css
+            }
+        }
+
+        // end main home box css
+    }
+
+    // end body css
+}
+
+// end home tablet media query
+
+// mobile media query - min-width 600px
+@media screen and (min-width: 600px) and (max-width: 899px) {
+
+    // body css
+    body {
+        height: auto;
+
+        // main home box css
+        .home-page-main-box {
+            height: 100%;
+            padding: 100px 20px;
+
+            .home-page-box {
+                flex-direction: column;
+
+                // home left & right box css
+                .home-left-content-box,
+                .home-right-content-box {
+                    width: 100%;
+
+                    // home header box 
+                    .home-header-box {
+                        width: 81%;
+
+                        .main-header {
+                            font-size: 3.6em;
+                        }
+
+                        .pawmatch-green-logo {
+                            width: 70px;
+                        }
+                    }
+
+                    // home text/btn content box
+                    .home-content-box {
+
+                        .home-text-box {
+                            font-size: 1.6em;
+                        }
+
+                        .home-btns-box {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+
+                            #go-to-sign-up-btn,
+                            #go-to-log-in-btn {
+                                padding: 10px 65px;
+                            }
+                        }
+                    }
+
+                    // home logo box
+                    .home-logo-box {
+                        margin-top: 50px;
+                        width: auto;
+                        height: auto;
+                        padding: 25px;
+
+                        img {
+                            width: 300px;
+                        }
+                    }
+                }
+
+                // end home left & right box css
+            }
+        }
+
+        // end main home box css
+    }
+
+    // end body css
+}
+
+// end home mobile media query
