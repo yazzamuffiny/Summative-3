@@ -29,7 +29,7 @@ const Home = () => {
             {/* home header box */}
             <div className='home-header-box'>
               <h1 className='main-header'>PawMatch</h1>
-              <img className='pawmatch-green-logo' src="https://placehold.co/100" alt="placeholder" />
+              <img className='pawmatch-green-logo' src="src/images/green-pawprint.svg" alt="placeholder" />
             </div>
 
             {/* home text & btns box */}
@@ -50,7 +50,7 @@ const Home = () => {
           <div className='home-right-content-box'>
             {/* home logo box */}
             <div className='home-logo-box'>
-              <img src="src/images/logo-no-bg.png" alt="pawmatch logo" />
+            <img src="src/images/dog-gif.gif" alt="pawmatch logo" />
             </div>
           </div>
         </div>

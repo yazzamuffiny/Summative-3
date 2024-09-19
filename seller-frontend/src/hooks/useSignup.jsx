@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useAuthContext } from './useAuthContext';
+import { useNavigate } from 'react-router-dom'
+
 const baseURL = import.meta.env.VITE_API_BASE_URL
 
 export const useSignup = () => {
+    const navigate = useNavigate();
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
     const {dispatch} = useAuthContext()
@@ -28,6 +31,7 @@ export const useSignup = () => {
                 dispatch({type: 'LOGIN', payload: response.data})
 
                 setIsLoading(false);
+                navigate('/seller-home');
             }
 
             console.log(response);

@@ -10,6 +10,7 @@ import { formatDistanceToNow } from 'date-fns';
 
 import { FaChevronLeft } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { FaTrashCan } from 'react-icons/fa6';
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
@@ -141,39 +142,36 @@ const SingleListing = () => {
     )
   }
 
-    return (
-
-        <div className='single-listing-page'>
-
+  return (
+    <div className='single-listing-page'>
         {isEditing ? (
             <>
                 <h1 className='edit-title'>Edit Listing</h1>
                 <div className='form-edit-page'>
-                    <h2>Your Dogs Information:</h2>
+                    <h2>Your Dog's Information:</h2>
                     <div className='dog-form-info-edit'>
                         <div className='form-column'>
-                            <label htmlFor='breed'> Edit Breed: </label>
+                            <label htmlFor='breed'>Edit Breed:</label>
                             <input 
                                 type='text' 
                                 value={editBreed}
                                 onChange={(e) => setEditBreed(e.target.value)}
                             />
-
-                            <label htmlFor='size'> Edit Size:</label>
+                            <label htmlFor='size'>Edit Size:</label>
                             <select 
                                 name='size'
                                 id='size' 
                                 value={editSize}
                                 onChange={(e) => setEditSize(e.target.value)} 
                             >
-                                <option value='small'> Small </option>
-                                <option value='medium'> Medium </option>
-                                <option value='large'> Large </option>
+                                <option value='small'>Small</option>
+                                <option value='medium'>Medium</option>
+                                <option value='large'>Large</option>
                                 <option value='xlarge'>Extra Large</option>
                             </select>
                         </div>
                         <div className='form-column'>
-                            <label htmlFor='age'> Edit Age: </label>
+                            <label htmlFor='age'>Edit Age:</label>
                             <select 
                                 name='age' 
                                 id='age' 
@@ -186,8 +184,7 @@ const SingleListing = () => {
                                 <option value='mature'>Mature</option>
                                 <option value='senior'>Senior</option>
                             </select>
-
-                            <label htmlFor='number'> Edit Number Available: </label>
+                            <label htmlFor='number'>Edit Number Available:</label>
                             <input 
                                 type='text' 
                                 value={editNumber}
@@ -195,19 +192,18 @@ const SingleListing = () => {
                             />
                         </div>
                         <div className='form-column'>
-                            <label htmlFor='gender'> Edit Gender: </label>
+                            <label htmlFor='gender'>Edit Gender:</label>
                             <select
                                 name='gender' 
                                 id="gender" 
                                 value={editGender}
                                 onChange={(e) => setEditGender(e.target.value)} 
                             >
-                                <option value='male'> Male </option>
-                                <option value='female'> Female </option>
-                                <option value='mixed'> Mixed </option>
+                                <option value='male'>Male</option>
+                                <option value='female'>Female</option>
+                                <option value='mixed'>Mixed</option>
                             </select>
-
-                            <label htmlFor='location'> Edit Location: </label>
+                            <label htmlFor='location'>Edit Location:</label>
                             <select 
                                 name='location'
                                 id='location'
@@ -236,7 +232,7 @@ const SingleListing = () => {
                     <h2>Listing Information:</h2>
                     <div className='listing-form-edit-info'>
                         <div className='form-column'>
-                            <label htmlFor='price'> Edit Price: </label>
+                            <label htmlFor='price'>Edit Price:</label>
                             <input 
                                 type='text' 
                                 value={editPrice}
@@ -244,7 +240,7 @@ const SingleListing = () => {
                             />
                         </div>
                         <div className='form-column'>
-                            <label htmlFor='number'> Edit Additional Info: </label>
+                            <label htmlFor='info'>Edit Additional Info:</label>
                             <input 
                                 type='text' 
                                 value={editInfo}
@@ -253,82 +249,78 @@ const SingleListing = () => {
                         </div>
                     </div>
                     <div className='form-button-container'>
-                        <button onClick={handleCancelEdit}> Cancel Changes</button>
-                        <button onClick={handleSubmitEdit}> Save Changes</button>
+                        <button onClick={handleCancelEdit}>Cancel Changes</button>
+                        <button onClick={handleSubmitEdit}>Save Changes</button>
                     </div>
                 </div>
             </>
-        )
-        :
-        (
+        ) : (
             <>
-            <div className='single-page-top'>
-                <div className='single-listing-back-btn' onClick={handleBack}>
-                    <FaChevronLeft /> Back
-                </div>
-                <div className='single-listing-header'>
-                    <h2>{listing.breed}</h2>
-                </div>
-                <div className='single-listing-back-btn' onClick={handleEditState}>
-                    Edit Listing
-                </div>
-            </div>
-            <div className='single-page-img'>
-                <img src={listing.image} alt={`Image of ${listing.breed}`} />
-            </div>
-            <div className='single-page-info'>
-                <div className='listing-info'>
-                    <h3>{listing.breed}</h3>
-                    <div className='listing-tags'>
-                        <p className='gender-tag'>{listing.gender.toUpperCase()}</p>
-                        <p className='age-tag'>{listing.age.toUpperCase()}</p>
-                        <p className='available-tag'>{listing.number_available.toUpperCase()}</p>
-                        <p className='price-tag'>{listing.price.toUpperCase()}</p>
-                        <p className='size-tag'>{listing.size.toUpperCase()}</p>
-                        <p className='location-tag'>{listing.location.toUpperCase()}</p>
+                <div className='single-page-top'>
+                    <div className='single-listing-back-btn' onClick={handleBack}>
+                        <FaChevronLeft /> Back
                     </div>
-                    <h4>Further Information</h4>
-                    <p className='additional-info'>{listing.additional_info}</p>
-                    <p className='date'>
-                        Created {formatDistanceToNow(new Date(listing.createdAt), { includeSeconds: true })} ago
-                    </p>
+                    <div className='single-listing-header'>
+                        <h2>{listing.breed}</h2>
+                    </div>
+                    <div className='single-listing-back-btn' onClick={handleEditState}>
+                        Edit Listing
+                    </div>
                 </div>
-                <div className='seller-info'>
-                    <h3>{listing.user_id}</h3>
-                    <button>Contact Now</button>
+                <div className='single-page-img'>
+                    <img src={`${baseURL}/public/uploads/${listing.image}`} alt="photo of listing here" />      
                 </div>
-                
-            </div>
-            <div className='comments-box'>
-                <h2>Questions</h2>
-                <div className='add-comment'>
-                    <p>Ask a Question</p>
-                    <input
-                        type='text'
-                        value={commentText}
-                        onChange={(e) => setCommentText(e.target.value)}
-                        placeholder="Type Here..."
-                    />
-                    <button onClick={handleAddComment}><FaArrowRightLong /></button>
-                </div>
-                <div className='comments-list'>
-                    {listing.comments.map(comment => (
-                    <div key={comment._id} className='comment'>
-                        <h3>{comment.user_id}</h3>
-                        <p className='comment-text'>{comment.text}</p>
-                        <p className='comment-date'>
-                            {formatDistanceToNow(new Date(comment.createdAt), { includeSeconds: true })} ago
+                <div className='single-page-info'>
+                    <div className='listing-info'>
+                        <button onClick={handleEditState}>Edit Listing Shortcut</button>
+                        <h3>{listing.breed}</h3>
+                        <div className='listing-tags'>
+                            <p className='gender-tag'>{listing.gender.toUpperCase()}</p>
+                            <p className='age-tag'>{listing.age.toUpperCase()}</p>
+                            <p className='available-tag'>{listing.number_available.toUpperCase()}</p>
+                            <p className='price-tag'>{listing.price.toUpperCase()}</p>
+                            <p className='size-tag'>{listing.size.toUpperCase()}</p>
+                            <p className='location-tag'>{listing.location.toUpperCase()}</p>
+                        </div>
+                        <h4>Further Information</h4>
+                        <p className='additional-info'>{listing.additional_info}</p>
+                        <p className='date'>
+                            Created {formatDistanceToNow(new Date(listing.createdAt), { includeSeconds: true })} ago
                         </p>
                     </div>
-                    ))}     
+                    <div className='seller-info'>
+                        <h3>{listing.user_id}</h3>
+                        <button>Contact Now</button>
+                    </div>
                 </div>
-            </div>
+                <div className='comments-box'>
+                    <h2>Questions</h2>
+                    <div className='add-comment'>
+                        <p>Ask a Question</p>
+                        <input
+                            type='text'
+                            value={commentText}
+                            onChange={(e) => setCommentText(e.target.value)}
+                            placeholder="Type Here..."
+                        />
+                        <button onClick={handleAddComment}><FaArrowRightLong /></button>
+                    </div>
+                    <div className='comments-list'>
+                        {listing.comments.map(comment => (
+                            <div key={comment._id} className='comment'>
+                                <h3>{comment.user_id}</h3>
+                                <p className='comment-text'>{comment.text}</p>
+                                <p className='comment-date'>
+                                    {formatDistanceToNow(new Date(comment.createdAt), { includeSeconds: true })} ago
+                                </p>
+                            </div>
+                        ))}     
+                    </div>
+                </div>
             </>
-        )
-        }
+        )}
     </div>
-           
-    );
+);
 };
 
-export default SingleListing;
+export default SingleListing

@@ -12,10 +12,12 @@ const ListingDetails = ({ listing }) => {
     navigate(path);
   };
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL
+
   return (
     <div className='listing-card' onClick={handleNavigate}>
       <div className='card-img'>
-        <img src={listing.image} alt={`Image of ${listing.breed}`} />
+      <img src={`${baseURL}/public/uploads/${listing.image}`} alt="photo of listing here" />      
       </div>
       <div className='card-info'>
         <h3>{listing.breed}</h3>

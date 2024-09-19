@@ -76,7 +76,7 @@ const SignUp = () => {
             {/* signup right content box */}
             <div className='signup-right-content-box'>
                 <div className='logo-box'>
-                <img src="src/images/logo-no-bg.png" alt="pawmatch logo" />
+                <img src="src/images/dog-gif.gif" alt="pawmatch logo" />
                 </div>
             </div>
 
