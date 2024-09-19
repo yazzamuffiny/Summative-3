@@ -7,12 +7,13 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import ListingDetails from '../listingdetails/ListingDetails'
+import { useListingsContext } from '../../hooks/useListingsContext'
 
 const baseURL = import.meta.env.VITE_API_BASE_URL
 
 const Listings = () => {
 
-    const [listings, setListings] = useState([])
+    const {listings, dispatch} = useListingsContext()
 
     const [ searchTerm, setSearchTerm ] = useState('')
     const [ gender, setGender ] = useState('')
@@ -29,17 +30,17 @@ const Listings = () => {
         const fetchListings = async () => {
             try {
                 const response = await axios.get(`${baseURL}/api/listings/`)
-                const listingsData = response.data
-                setListings(listingsData)
-                setSearchedListings(listingsData)
+                if (response.status === 200) {
+                    dispatch ({ type: 'SET_LISTINGS', payload: response.data })
+                }
+                console.log(listings)
     
             } catch (error) {
                 console.log(error)
             }
         }
         fetchListings()
-       
-    }, [])
+    }, [dispatch])
 
 
     useEffect(() => {

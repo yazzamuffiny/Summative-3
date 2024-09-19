@@ -37,6 +37,9 @@ app.use('/api/comments/', commentRoutes)
 app.use('/api/user', userRoutes);
 app.use('/api/listings/', listingRoutes)
 
+// Multer static files - from public/uploads
+app.use('/public/uploads', express.static('public/uploads'));
+
 
 //home route for backend
 app.get('/', (req, res) => {
