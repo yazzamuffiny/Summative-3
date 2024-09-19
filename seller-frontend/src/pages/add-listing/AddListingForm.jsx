@@ -95,12 +95,12 @@ const AddListingForm = () => {
             <label htmlFor="age"> Age: </label>
             <select name="age" id="age" onChange={(e) => setAge(e.target.value)} value={age}>
             <option value=''>Please Select</option>
-              <option value='baby'>2 months - 6 months</option>
-              <option value='puppy'>6 month - 1 year</option>
-              <option value='teen'>1 - 2 years</option>
-              <option value='youngAdult'>2 - 5 years</option>
-              <option value='adult'>5 - 10 years</option>
-              <option value='senior'>10+ years</option>
+            <option value=''>Please Select</option>
+                <option value='puppy'>Puppy</option>
+                <option value='junior'>Junior</option>
+                <option value='adult'>Adult</option>
+                <option value='mature'>Mature</option>
+                <option value='senior'>Senior</option>
             </select>
           </div>
 
@@ -121,6 +121,7 @@ const AddListingForm = () => {
               <option value="small"> Small </option>
               <option value="medium"> Medium </option>
               <option value="large"> Large </option>
+              <option value='xlarge'>Extra Large</option>
             </select>
           </div>
 
