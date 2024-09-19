@@ -96,3 +96,51 @@
         transition: all 0.3s ease;
     }
 }
+
+@media screen and (min-width: 600px) {
+    .backbtn-title {
+
+        h1 {
+            font-size: 1.7em;
+        }
+    }
+
+    .add-listing-form {
+
+        .input-grid {
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        button {
+            margin-left: 0%;
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .add-listing-form {
+
+        .input-grid {
+            grid-template-columns: repeat(3,1fr);
+        }
+
+        button {
+            margin-left: 0%;
+        }
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .backbtn-title {
+        h1 {
+            font-size: 3em;
+        }
+    }
+
+    .add-listing-form {
+
+        button {
+            margin-left: 40%;
+        } 
+    }
+}
