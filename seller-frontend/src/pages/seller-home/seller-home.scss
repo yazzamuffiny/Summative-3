@@ -19,7 +19,6 @@
     -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
 
     h1 {
-        font-size: 4em;
         font-family: "Hachi Maru Pop", cursive;
     }
 }
@@ -151,8 +150,65 @@
             }
         }
     }
+}
 
-    .listings-display {
-        margin-left: 10%;
+// ----------- MEDIA QUERIES --------------- //
+// mobile = 600px
+// tablet = 900px
+// @media screen and (min-width= 1080px) {
+// }
+
+// MOBILE
+@media screen and (min-width: 600px) {
+    .page-title h1 {
+        font-size: 2em;
+    }
+
+    .filter-listing-cont {
+        flex-direction: column;
+
+        .form-box {
+            width: 100%;
+
+            .search-box , .filter-box {
+                width: 100%;
+            }
+        }
+
+        .listings-display {
+            margin: 0%; // possibly come back to this
+        }
+    }
+
+}
+
+// TABLET
+@media screen and (min-width: 900px) {
+    .page-title h1 {
+        font-size: 3em;
+    }
+
+    .filter-listing-cont {
+        flex-direction: row;
+
+        .listings-display {
+            margin-left: 10%;
+        }
+    }
+    
+}
+
+// LAPTOP (SMALL & UP)
+@media screen and (min-width: 1080px) {
+    .page-title h1 {
+        font-size: 4em;
+    }
+
+    .filter-listing-cont {
+        flex-direction: row;
+
+        .listings-display {
+            margin-left: 10%;
+        }
     }
 }
