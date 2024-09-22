@@ -263,6 +263,8 @@ body {
     // end body css
 }
 
+// end laptop media queries
+
 // tablet media queries - min-width 900px
 @media screen and (min-width: 900px) and (max-width: 1079px) {
 
@@ -335,7 +337,7 @@ body {
 
                     // home header box 
                     .home-header-box {
-                        width: 81%;
+                        width: 80%;
 
                         .main-header {
                             font-size: 3.6em;

@@ -93,8 +93,12 @@
             @include white-box;
 
             .main-header {
-                font-size: 5.625em;
+                font-size: 4.3em;
                 font-family: "Hachi Maru Pop", cursive;
+            }
+
+            .pawmatch-green-logo {
+                width: 75px;
             }
 
         }
@@ -202,4 +206,95 @@ footer {
 }
 // end of footer css
 
+// media queries 
+// laptop media queries - min-width 1080px
+@media screen and (min-width: 1080px) {
+    .logo-box {
+       padding: 0;
+
+        // home main logo
+        img {
+            width: 430px;
+            object-position: center;
+            object-fit: cover;
+        }
+    }
+}
+
+// end laptop media queries
+
+// tablet media queries - min-width 900px
+@media screen and (min-width: 900px) and (max-width: 1079px) {
+    .login-page {
+
+        .login-page-box {
+
+            .login-left-content-box, .login-right-content-box {
+                padding: 0;
+
+                .header-box {
+                    .main-header {
+                        font-size: 3.6em;
+                    }
+                }
+
+                #login-form-box {
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    // home main logo
+    img {
+        width: 320px;
+        object-position: center;
+        object-fit: cover;
+    }
+}
+
+// mobile media queries - min-width 600px
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    .login-page {
+        height: auto;
+
+        .login-page-box {
+            flex-direction: column;
+            padding: 100px 20px;
+
+            .login-left-content-box, .login-right-content-box {
+                width: 100%;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .header-box {
+                    width: 80%;
+
+                    .main-header {
+                        font-size: 3.6em;
+                    }
+                }
+
+                #login-form-box {
+                    margin-top: 46px;
+                    width: 80%;
+                }
+
+                .logo-box {
+                    margin-top: 50px;
+                    width: auto;
+                    height: auto;
+                    padding: 25px;
+
+                    img {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
 
