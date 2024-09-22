@@ -28,7 +28,7 @@ const SingleListing = () => {
             const response = await axios.post(`${baseURL}/api/comments/listings/${listing._id}/comments`, 
                 {
                     text: commentText,
-                    user_id: 'user.email',
+                    user_id: user.email,
                 }
             )
 
@@ -75,6 +75,7 @@ const SingleListing = () => {
                 <div className='single-listing-header'>
                     <h2>{listing.breed}</h2>
                 </div>
+                <div className='placeholder'></div>
             </div>
             <div className='single-page-img'>
                 <img src={listing.image} alt={`Image of ${listing.breed}`} />
@@ -83,12 +84,12 @@ const SingleListing = () => {
                 <div className='listing-info'>
                     <h3>{listing.breed}</h3>
                     <div className='listing-tags'>
-                        <p className='gender-tag'>{listing.gender}</p>
-                        <p className='age-tag'>{listing.age}</p>
-                        <p className='available-tag'>{listing.number_available}</p>
-                        <p className='price-tag'>{listing.price}</p>
-                        <p className='size-tag'>{listing.size}</p>
-                        <p className='location-tag'>{listing.location}</p>
+                        <p className='gender-tag'>{listing.gender.toUpperCase()}</p>
+                        <p className='age-tag'>{listing.age.toUpperCase()}</p>
+                        <p className='available-tag'>{listing.number_available.toUpperCase()}</p>
+                        <p className='price-tag'>{listing.price.toUpperCase()}</p>
+                        <p className='size-tag'>{listing.size.toUpperCase()}</p>
+                        <p className='location-tag'>{listing.location.toUpperCase()}</p>
                     </div>
                     <h4>Further Information</h4>
                     <p className='additional-info'>{listing.additional_info}</p>

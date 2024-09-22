@@ -132,8 +132,10 @@ body {
 
                     // sign up & log in btns css
                     #go-to-sign-up-btn,
-                    #go-to-log-in-btn {
+                    #go-to-log-in-btn,
+                    #go-to-listings {
                         padding: 10px 72px;
+                        width: 260px;
                         border-radius: 50px;
                         background-color: #349DD6;
                         font-size: 2em;
@@ -143,7 +145,8 @@ body {
                     }
 
                     #go-to-sign-up-btn:hover,
-                    #go-to-log-in-btn:hover {
+                    #go-to-log-in-btn:hover,
+                    #go-to-listings:hover {
                         background-color: white;
                         border: 2px solid #349DD6;
                         color: #349DD6;

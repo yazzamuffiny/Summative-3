@@ -4,47 +4,6 @@
     height: 100%;
     padding: 20px;
     font-family: "Afacad", sans-serif;
-    .form-box {
-        position: fixed;
-        z-index: 10;
-        top: 250px;
-        left: 60px;
-        height: 420px;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        width: 300px;
-        border-radius: 50px;
-        background-color: white;
-        border: 3px solid black;
-        .search-header {
-            font-size: 2em;
-            font-family: "Jua", sans-serif;
-            font-weight: 200;
-        }
-        .search-box {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            border-bottom: 2px solid black;
-            input {
-                border-radius: 50px;
-                padding: 5px;
-            }
-        }
-        .filter-box {
-            display: flex; 
-            flex-direction: column;
-            padding: 20px;
-            label {
-                margin-left: 5px;
-            }
-            select {
-                border-radius: 50px;
-                padding: 5px;
-            }
-        }
-    }
     .page-header {
         display: flex;
         justify-content: center;
@@ -64,12 +23,68 @@
         padding: 20px;
         display: flex;
         flex-direction: row;
-        justify-content: right;
+        justify-content: space-around;
         box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
         -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
         background-color: rgb(255, 255, 255);
         border-radius: 50px;
+        .form-box {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 300px;
+            border-radius: 50px;
+            background-color: white;
+            border: 3px solid black;
+            .search-header {
+                font-size: 2em;
+                font-family: "Jua", sans-serif;
+                font-weight: 200;
+            }
+            .search-box {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                border-bottom: 2px solid black;
+                input {
+                    border-radius: 50px;
+                    padding: 5px;
+                }
+            }
+            .filter-box {
+                display: flex; 
+                flex-direction: column;
+                padding: 20px;
+                label {
+                    margin-left: 5px;
+                }
+                select {
+                    border-radius: 50px;
+                    padding: 5px;
+                }
+                button {
+                    margin: 20px;
+                    width: 180px;
+                    padding: 10px;
+                    border-radius: 50px;
+                    border: 3px solid #349DD6;
+                    background-color: #349DD6;
+                    font-family: "Jua", sans-serif;
+                    color: white;
+                    font-size: 1.3em;
+                    transition: all 0.3s ease;
+                }
+                button:hover {
+                    background-color: white;
+                    border: 3px solid #349DD6;
+                    color: #349DD6;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
     }
     
 }
