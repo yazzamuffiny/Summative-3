@@ -177,6 +177,9 @@
 
         .listings-display {
             margin: 0%; // possibly come back to this
+            display: grid;
+            grid-template-columns: repeat(1fr, 2);
+            // grid-template-rows: repeat();
         }
     }
 

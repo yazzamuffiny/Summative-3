@@ -3,6 +3,7 @@
     .single-page-top {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         margin-bottom: 20px;
         .single-listing-back-btn {
             margin-left: 20px;
@@ -30,8 +31,6 @@
             transition: all 0.3s ease;
         }
         .single-listing-header {
-            position: relative;
-            left: 30%;
             background-color: white;
             padding: 10px 20px;
             font-size: 3em;
@@ -40,6 +39,11 @@
             box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
             -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
             -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
+        }
+        .placeholder {
+            height: 10px;
+            width: 150px;
+            margin-right: 20px;
         }
     }
     .single-page-img {
@@ -115,6 +119,10 @@
         }
         .seller-info {
             background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 50px;
             border-radius: 50px;
             box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
