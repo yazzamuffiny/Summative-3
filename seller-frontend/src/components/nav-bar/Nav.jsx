@@ -7,7 +7,6 @@ const Nav = () => {
 
   const {logout} = useLogout();
   const {user} = useAuthContext();
-
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -15,11 +14,15 @@ const Nav = () => {
     navigate('/');
   }
 
+  const navigateHome = () => {
+    navigate('/')
+  }
+
   return (
     <div className='navbar'>
 
       <div className='logo'>
-        <img src="src/images/logo-no-bg.png" alt="website logo"/>
+        <img src="src/images/logo-no-bg.png" alt="website logo" onClick={navigateHome}/>
       </div>
 
       <div className='logged-user'>
