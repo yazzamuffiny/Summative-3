@@ -198,9 +198,7 @@ const Home = () => {
         </div>
 
         <div className='listings-display'>
-            {searchedListings.map((listing) => (
-                    <ListingDetails key={listing._id} listing={listing} />
-                ))}
+       
 
 {showMyListings ? (listings && listings.map((listing) => {
                     const user = JSON.parse(localStorage.getItem('user'))
@@ -210,7 +208,7 @@ const Home = () => {
                             <ListingDetails key={listing._id} listing={listing}/>
                         )
                     }
-                })) : (listings && listings.map((listing) => {
+                })) : (searchedListings.map((listing) => {
                     return (
                         <ListingDetails key={listing._id} listing={listing}/>
                     )
