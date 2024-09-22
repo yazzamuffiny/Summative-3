@@ -78,7 +78,10 @@ const SingleListing = () => {
                 <div className='placeholder'></div>
             </div>
             <div className='single-page-img'>
-                <img src={listing.image} alt={`Image of ${listing.breed}`} />
+                <div className='img'>
+                    <img src={`${baseURL}/public/uploads/${listing.image}`} alt={`Image of ${listing.breed}`} />   
+                </div>
+                
             </div>
             <div className='single-page-info'>
                 <div className='listing-info'>

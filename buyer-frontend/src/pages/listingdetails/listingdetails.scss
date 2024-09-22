@@ -66,3 +66,36 @@
     transition: all 0.3s ease;
     border: 3px solid #7AC898;
 }
+
+@media screen and (max-width: 900px) {
+    .listing-card {
+        width: 400px;
+        flex-direction: column;
+        .card-img {
+            width: 100%;
+        }
+        .card-info {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            h4 {
+                font-size: 1.5em;
+            }
+            .card-tags {
+                justify-content: center;
+            }
+            .date {
+                left: 30%;
+            }
+        
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .listing-card {
+        width: 100%;
+        margin-top: 20px;
+    }    
+}
+
