@@ -23,6 +23,13 @@ const Listings = () => {
     const [ searchedListings, setSearchedListings ] = useState([])
     
 
+    const handleClearFilters = () => {
+        setSearchTerm('');
+        setGender('');
+        setAge('');
+        setSize('');
+        setLocation('');
+    };
    
 
     useEffect (() => {
@@ -65,17 +72,22 @@ const Listings = () => {
 
   return (
     <div className='listings-page'>
-        <div className='form-box'>
+        
+        <div className='page-header'>
+            <h3>Local Listings</h3>
+        </div>
+        <div className='listing-box'>
+            <div className='form-box'>
                 <div className='search-box'>
-                <label className='search-header'htmlFor='search'>Search Breed:</label>
-                <input 
-                    type='text' 
-                    name='search'
-                    id='search'
-                    value={searchTerm}
-                    onChange={(event) => setSearchTerm(event.target.value)}
-                />
-            </div>
+                    <label className='search-header'htmlFor='search'>Search Breed:</label>
+                    <input 
+                        type='text' 
+                        name='search'
+                        id='search'
+                        value={searchTerm}
+                        onChange={(event) => setSearchTerm(event.target.value)}
+                    />
+                </div>
             <div className='filter-box'>
                 <h3 className='search-header'>Filters:</h3>
                 {/* gender filter */}
@@ -146,13 +158,10 @@ const Listings = () => {
                     <option value='otago'>Otago</option>
                     <option value='southland'>Southland</option>
                 </select>
+
+                <button onClick={handleClearFilters}> Clear Filters </button>
             </div>
             </div>
-        <div className='page-header'>
-            <h3>Local Listings</h3>
-        </div>
-        <div className='listing-box'>
-            
 
             <div className='listings-display'>
                 {searchedListings.map((listing) => (
