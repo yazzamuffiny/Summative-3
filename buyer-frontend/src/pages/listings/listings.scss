@@ -88,3 +88,31 @@
     }
     
 }
+
+// MOBILE
+@media screen and (max-width: 600px) {
+   
+    .listings-page {
+        .listing-box {
+            flex-direction: column;
+            align-items: center;
+            .form-box {
+                width: 100%;
+                .filter-box {
+                    label {
+                        margin-left: 5px;
+                    }
+                    select {
+                        border-radius: 50px;
+                        padding: 5px;
+                    }
+                    button {
+                        margin-left: 30%;
+                    }
+                    
+                }
+            }
+        } 
+    }
+}
+
