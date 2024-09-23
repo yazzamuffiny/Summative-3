@@ -121,6 +121,12 @@ const SingleListing = () => {
         }
 }
 
+const getEmailCharactersBeforeAtSymbol = (email) => {
+    const delimiter = '@';
+    const parts = email.split(delimiter);
+    return parts.length > 1 ? parts[0]: '';
+  }
+
 
     const handleBack = () => {
         navigate(-1);
@@ -333,8 +339,8 @@ const SingleListing = () => {
                     <div className='comments-list'>
                         {listing.comments.map(comment => (
                             <div key={comment._id} className='comment'>
-                                <h3>{comment.user_id}</h3>
-                                <p className='comment-text'>{comment.text}</p>
+                        <h3>{comment.user_id ? getEmailCharactersBeforeAtSymbol(comment.user_id) : 'Unknown'}</h3>
+                        <p className='comment-text'>{comment.text}</p>
                                 <p className='comment-date'>
                                     {formatDistanceToNow(new Date(comment.createdAt), { includeSeconds: true })} ago
                                 </p>
