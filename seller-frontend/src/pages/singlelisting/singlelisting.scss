@@ -285,3 +285,69 @@
     }
    
 }
+
+@media screen and (max-width: 1080px) {
+
+}
+
+@media screen and (max-width: 900px) {
+    .single-listing-page {
+
+        .single-page-top {
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .single-page-info {
+            flex-direction: column;
+            gap: 20px;
+            margin: 0px 30px;
+
+            .seller-info {
+               text-align: center;
+            }
+
+            .listing-tags {
+                flex-wrap: wrap;
+            }
+        }
+
+        .comments-box {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .single-listing-page {
+
+        .single-page-top {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .single-page-info {
+            flex-direction: column;
+            gap: 20px;
+            margin: 0px 30px;
+
+            .seller-info {
+               text-align: center;
+            }
+
+            .listing-tags {
+                flex-wrap: wrap;
+            }
+        }
+
+        .comments-box {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+}
