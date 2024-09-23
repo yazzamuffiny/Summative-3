@@ -69,7 +69,8 @@
     .single-page-info {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        margin: 0px 30px;
         .listing-info {
             background-color: white;
             border-radius: 50px;
