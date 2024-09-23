@@ -87,12 +87,12 @@ const SingleListing = () => {
                 <div className='listing-info'>
                     <h3>{listing.breed}</h3>
                     <div className='listing-tags'>
-                        <p className='gender-tag'>{listing.gender.toUpperCase()}</p>
-                        <p className='age-tag'>{listing.age.toUpperCase()}</p>
-                        <p className='available-tag'>{listing.number_available.toUpperCase()}</p>
-                        <p className='price-tag'>{listing.price.toUpperCase()}</p>
-                        <p className='size-tag'>{listing.size.toUpperCase()}</p>
-                        <p className='location-tag'>{listing.location.toUpperCase()}</p>
+                        <p className='gender-tag'>Gender: {listing.gender.toUpperCase()}</p>
+                        <p className='age-tag'>Age: {listing.age.toUpperCase()}</p>
+                        <p className='available-tag'>Number Available: {listing.number_available.toUpperCase()}</p>
+                        <p className='price-tag'>Price: ${listing.price.toUpperCase()}</p>
+                        <p className='size-tag'>Size: {listing.size.toUpperCase()}</p>
+                        <p className='location-tag'>Location: {listing.location.toUpperCase()}</p>
                     </div>
                     <h4>Further Information</h4>
                     <p className='additional-info'>{listing.additional_info}</p>

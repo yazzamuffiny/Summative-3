@@ -23,9 +23,9 @@ const ListingDetails = ({ listing }) => {
         <h3>{listing.breed}</h3>
         <h4>{listing.user_id}</h4>
         <div className='card-tags'>
-          <p className='gender-tag'>{listing.gender.toUpperCase()}</p>
-          <p className='age-tag'>{listing.age.toUpperCase()}</p>
-          <p className='available-tag'>{listing.number_available.toUpperCase()}</p>
+          <p className='gender-tag'>Gender: {listing.gender.toUpperCase()}</p>
+          <p className='age-tag'>Age: {listing.age.toUpperCase()}</p>
+          <p className='available-tag'>Number Available: {listing.number_available.toUpperCase()}</p>
         </div>
         <p className='date'>
           Created&nbsp;
