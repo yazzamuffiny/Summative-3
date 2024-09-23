@@ -50,6 +50,14 @@
             border: none;
         }
 
+        button:hover {
+            background-color: white;
+            border: 2px solid #349DD6;
+            color: #349DD6;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
         span {
             font-size: 2em;
             font-family: "Jua", sans-serif;
@@ -85,8 +93,12 @@
             @include white-box;
 
             .main-header {
-                font-size: 5.625em;
+                font-size: 4.3em;
                 font-family: "Hachi Maru Pop", cursive;
+            }
+
+            .pawmatch-green-logo {
+                width: 75px;
             }
 
         }
@@ -148,12 +160,12 @@
                         font-size: 2em;
                         font-family: "Jua", sans-serif;
                         color: #fff;
-                        border: 3px solid #349DD6;
+                        border: none;
                     }
 
                     #signup-btn:hover {
                         background-color: white;
-                        border: 3px solid #349DD6;
+                        border: 2px solid #349DD6;
                         color: #349DD6;
                         cursor: pointer;
                         transition: all 0.3s ease;
@@ -193,4 +205,96 @@ footer {
     margin-top: 20px;
 }
 // end of footer css
+
+// media queries 
+// laptop media queries - min-width 1080px
+@media screen and (min-width: 1080px) {
+    .logo-box {
+       padding: 0;
+
+        // home main logo
+        img {
+            width: 430px;
+            object-position: center;
+            object-fit: cover;
+        }
+    }
+}
+
+// end laptop media queries
+
+// tablet media queries - min-width 900px
+@media screen and (min-width: 900px) and (max-width: 1079px) {
+    .signup-page {
+
+        .signup-page-box {
+
+            .signup-left-content-box, .signup-right-content-box {
+                padding: 0;
+
+                .header-box {
+                    .main-header {
+                        font-size: 3.6em;
+                    }
+                }
+
+                #signup-form-box {
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    // home main logo
+    img {
+        width: 320px;
+        object-position: center;
+        object-fit: cover;
+    }
+}
+
+// mobile media queries - min-width 600px
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    .signup-page {
+        height: auto;
+
+        .signup-page-box {
+            flex-direction: column;
+            padding: 100px 20px;
+
+            .signup-left-content-box, .signup-right-content-box {
+                width: 100%;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .header-box {
+                    width: 80%;
+
+                    .main-header {
+                        font-size: 3.6em;
+                    }
+                }
+
+                #signup-form-box {
+                    margin-top: 46px;
+                    width: 80%;
+                }
+
+                .logo-box {
+                    margin-top: 50px;
+                    width: auto;
+                    height: auto;
+                    padding: 25px;
+
+                    img {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
 

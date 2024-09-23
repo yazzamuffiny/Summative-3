@@ -8,7 +8,6 @@ import { useSignup } from '/src/hooks/useSignup'
 import './signup.scss'
 
 const SignUp = () => {
-
     // signup state values
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
