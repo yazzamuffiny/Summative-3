@@ -11,6 +11,7 @@ import { formatDistanceToNow } from 'date-fns';
 import { FaChevronLeft } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaTrashCan } from 'react-icons/fa6';
+import { FaPenToSquare } from 'react-icons/fa6';
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
@@ -291,7 +292,10 @@ const SingleListing = () => {
                     <div className='listing-info'>
                         {listing.user_id === logged_user && (
                             <>
-                                <FaTrashCan className='delete' onClick={handleDelete}/>
+                                <div className='edit-delete'>
+                                    <FaPenToSquare className='edit' onClick={handleEditState}/>
+                                    <FaTrashCan className='delete' onClick={handleDelete}/>
+                                </div>
                             </>
                         )}
                         <h3>{listing.breed}</h3>
