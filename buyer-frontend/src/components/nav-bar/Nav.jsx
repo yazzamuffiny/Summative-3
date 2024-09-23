@@ -20,6 +20,12 @@ const Nav = () => {
     navigate('/');
   }
 
+  const getEmailCharactersBeforeAtSymbol = (email) => {
+    const delimiter = '@';
+    const parts = email.split(delimiter);
+    return parts.length > 1 ? parts[0]: '';
+  }
+
   return (
     <div className='navbar'>
 
@@ -30,7 +36,7 @@ const Nav = () => {
       {/* change this to the login signup buttons */}
       <div className='logged-user'>
         {user && <div className="userInt">
-          <span>{user.email}</span>
+          <span>{user.email ? getEmailCharactersBeforeAtSymbol(user.email) : 'Unknown'}</span>
           <button className='logout-btn' onClick={handleLogout}> Logout </button>
           </div>}
       </div>

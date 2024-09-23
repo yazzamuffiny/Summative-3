@@ -9,6 +9,7 @@ const Nav = () => {
   const {user} = useAuthContext();
   const navigate = useNavigate();
 
+
   const handleLogout = () => {
     logout();
     navigate('/');
@@ -16,6 +17,11 @@ const Nav = () => {
 
   const navigateHome = () => {
     navigate('/')
+  }
+  const getEmailCharactersBeforeAtSymbol = (email) => {
+    const delimiter = '@';
+    const parts = email.split(delimiter);
+    return parts.length > 1 ? parts[0]: '';
   }
 
   return (
@@ -27,7 +33,7 @@ const Nav = () => {
 
       <div className='logged-user'>
         {user && <div className="userInt">
-          <span>{user.email}</span>
+          <span>{user.email ? getEmailCharactersBeforeAtSymbol(user.email) : 'Unknown'}</span>
           <button className='logout-btn' onClick={handleLogout}> Logout </button>
           </div>}
       </div>
