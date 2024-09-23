@@ -17,6 +17,7 @@
         display: flex;
         font-family: "Afacad", sans-serif;
         text-transform: uppercase;
+        flex-wrap: wrap;
 
         .gender-tag {
             border-radius: 50px;
@@ -157,9 +158,14 @@
 
             .age-tag , .gender-tag , .available-tag {
                 margin: 10px 3px;
+                flex-wrap: wrap;
+
             }
         }
 
+    }
+    .listing-card:hover {
+        scale: 1.0;
     }
 }
 
@@ -199,6 +205,10 @@
         .card-tags {
             justify-content: center;
             margin-bottom: 10px;
+            flex-wrap: wrap;
         }
+    }
+    .listing-card:hover {
+        scale: 1.0;
     }
 }
