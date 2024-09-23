@@ -14,6 +14,12 @@ const ListingDetails = ({ listing }) => {
 
   const baseURL = import.meta.env.VITE_API_BASE_URL
 
+  const getEmailCharactersBeforeAtSymbol = (email) => {
+    const delimiter = '@';
+    const parts = email.split(delimiter);
+    return parts.length > 1 ? parts[0]: '';
+  }
+
   return (
     <div className='listing-card' onClick={handleNavigate}>
       <div className='card-img'>
@@ -21,7 +27,8 @@ const ListingDetails = ({ listing }) => {
       </div>
       <div className='card-info'>
         <h3>{listing.breed}</h3>
-        <h4>{listing.user_id}</h4>
+        <h4> {listing.user_id ? getEmailCharactersBeforeAtSymbol(listing.user_id) : 'Unknown'}</h4>
+
         <div className='card-tags'>
           <p className='gender-tag'>{listing.gender}</p>
           <p className='age-tag'>{listing.age}</p>

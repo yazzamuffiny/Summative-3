@@ -153,13 +153,58 @@
 }
 
 // ----------- MEDIA QUERIES --------------- //
-// mobile = 600px
-// tablet = 900px
-// @media screen and (min-width= 1080px) {
-// }
+
+// BIG LAPTOP
+@media screen and (min-width: 1080px) {
+    .page-title h1 {
+        font-size: 4em;
+    }
+
+    .filter-listing-cont {
+        flex-direction: row;
+
+        .listings-display {
+            margin-left: 6%;
+        }
+    }
+}
+
+
+// LAPTOP (SMALL & UP)
+@media screen and (max-width: 1080px) {
+    .page-title h1 {
+        font-size: 4em;
+    }
+
+    .filter-listing-cont {
+        flex-direction: row;
+
+        .listings-display {
+            margin-left: 4%;
+        }
+    }
+}
+
+// TABLET
+@media screen and (max-width: 900px) {
+    .page-title h1 {
+        font-size: 3em;
+    }
+
+    .filter-listing-cont {
+        flex-direction: row;
+        width: 100%;
+
+        .listings-display {
+            width: 100%;
+            margin-left: 4%;
+        }
+    }
+    
+}
 
 // MOBILE
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
     .page-title h1 {
         font-size: 2em;
     }
@@ -176,42 +221,9 @@
         }
 
         .listings-display {
-            margin: 0%; // possibly come back to this
-            display: grid;
-            grid-template-columns: repeat(1fr, 2);
-            // grid-template-rows: repeat();
+           align-items: center;
+           margin-left: 0%;
         }
     }
 
-}
-
-// TABLET
-@media screen and (min-width: 900px) {
-    .page-title h1 {
-        font-size: 3em;
-    }
-
-    .filter-listing-cont {
-        flex-direction: row;
-
-        .listings-display {
-            margin-left: 10%;
-        }
-    }
-    
-}
-
-// LAPTOP (SMALL & UP)
-@media screen and (min-width: 1080px) {
-    .page-title h1 {
-        font-size: 4em;
-    }
-
-    .filter-listing-cont {
-        flex-direction: row;
-
-        .listings-display {
-            margin-left: 10%;
-        }
-    }
 }

@@ -1,130 +1,203 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Hachi+Maru+Pop&family=Jua&display=swap');
+
 .listing-card {
     background-color: white;
-    width: 800px;
     border-radius: 50px;
+    padding: 10px;
     border: 3px solid black;
-    height: 300px;
-    display: flex;
-    margin-bottom: 20px;
     transition: all 0.3s ease;
-    .card-img {
+
+    .card-img img {
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid black;
+    }
+
+    .card-tags {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 40%;
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
+        font-family: "Afacad", sans-serif;
+        text-transform: uppercase;
 
-        img {
-            width: 90%;
-            height: 90%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid black;
+        .gender-tag {
+            border-radius: 50px;
+            padding: 10px 20px;
+            background-color: #3EC2D9;
         }
-    }
-    .card-info {
-        position: relative;
-        width: 50%;
-        padding: 20px;
-        h3 {
-            font-size: 3em;
-            font-family: "Jua", sans-serif;
+
+        .age-tag {
+            border-radius: 50px;
+            padding: 10px 20px;
+            background-color: #ADD35A;
         }
-        h4 {
-            font-size: 2em;
-            font-family: "Jua", sans-serif;
-        }
-        .card-tags {
-            display: flex;
-            font-family: "Afacad", sans-serif;
-            text-transform: uppercase;
-            
-            .gender-tag {
-                margin: 10px;
-                border-radius: 50px;
-                padding: 10px 20px;
-                background-color: #3EC2D9;
-            }
-            .age-tag {
-                margin: 10px;
-                border-radius: 50px;
-                padding: 10px 20px;
-                background-color: #ADD35A;
-            }
-            .available-tag {
-                margin: 10px;
-                border-radius: 50px;
-                padding: 10px 20px;
-                background-color: #7AC898;
-            }
-        }
-        .date {
-            position: absolute;
-            bottom: 10px;
-            font-family: "Afacad", sans-serif;
+
+        .available-tag {
+            border-radius: 50px;
+            padding: 10px 20px;
+            background-color: #7AC898;
         }
     }
 }
 
-@media screen and (min-width: 600px) {
-    .listing-card {
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        margin: 6% 0%;
-
-        .card-img img {
-            width: 100%;
-            height: 200px;
-            margin-top: 10px;
-        }
-        .card-info {
-            width: 100%;
-            text-align: center;
-        }
-        .card-tags {
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-        .date {
-            left: 40%;
-        }
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .listing-card {
-        height: 6%;
-
-        .card-img img {
-            width: 100%;
-            height: 150px;
-        }
-        .date {
-            left: 34%;
-        }
-    }
-}
-
+// BIG LAPTOP
 @media screen and (min-width: 1080px) {
     .listing-card {
+        display: flex;
+        align-items: center;
         width: 800px;
-        flex-direction: row;
+        margin-bottom: 6%;
 
-        .card-img img {
-            width: 90%;
-            height: 300px;
+        .card-img {
+            width: 60%;
+
+            img {
+                width: 80%;
+                height: 350px;
+            }
         }
+
         .card-info {
-            width: 50%;
+
+            h3 {
+                font-size: 3em;
+                font-family: "Jua", sans-serif;
+            }
+    
+            h4 {
+                font-size: 2em;
+                font-family: "Jua", sans-serif;
+            }
+    
+            .date {
+                font-family: "Afacad", sans-serif;
+                margin-top: 10px;
+            }
+    
+            .age-tag, .gender-tag, .age-tag {
+                margin-right: 10px;
+            }
+
         }
     }
+
     .listing-card:hover {
         scale: 1.1;
         cursor: pointer;
         transition: all 0.3s ease;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .listing-card {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 6%;
+
+
+        .card-img {
+            width: 60%;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+
+            img {
+                width: 90%;
+                height: 300px;
+            }
+        }
+
+        .card-info {
+            width: 50%;
+
+            .age-tag, .gender-tag, .age-tag {
+                margin-right: 10px;
+            }
+
+            h3 {
+                font-size: 2.5em;
+                font-family: "Jua", sans-serif;
+            }
+
+            h4 {
+                font-size: 1.5em;
+                font-family: "Jua", sans-serif;
+            }
+
+            .date {
+                font-family: "Afacad", sans-serif;
+            }
+        }
+    }
+
+    .listing-card:hover {
+        scale: 1.1;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .listing-card {
+        width: 100%;
+        margin: 6% 0%;
+      
+        .card-img {
+            width: 60%;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+
+            img {
+                width: 90%;
+                height: 200px;
+            }
+        }
+
+        .card-info {
+            width: 50%;
+
+            .age-tag , .gender-tag , .available-tag {
+                margin: 10px 3px;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .listing-card {
+        display: flex;
+        flex-direction: column; // column switches the alignments
+        align-items: center; //centring horizontally
+        margin: 6% 0%;
+        width: 100%;
+
+        .card-img {
+            width: 40%;
+
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+        }
+
+        .card-info {
+            width: 100%;
+            text-align: center;
+
+            h3 {
+                font-size: 2.5em;
+                font-family: "Jua", sans-serif;
+            }
+
+            h4 {
+                font-size: 1.5em;
+                font-family: "Jua", sans-serif;
+            }
+        }
+
+        .card-tags {
+            justify-content: center;
+            margin-bottom: 10px;
+        }
     }
 }
