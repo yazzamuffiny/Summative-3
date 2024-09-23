@@ -37,6 +37,8 @@ const SingleListing = () => {
        
   
     const user = JSON.parse(localStorage.getItem('user'))
+    const user_id = user.email
+
 
     const logged_user = user.email
 
@@ -274,9 +276,13 @@ const SingleListing = () => {
                     <div className='single-listing-header'>
                         <h2>{listing.breed}</h2>
                     </div>
-                    <div className='single-listing-back-btn' onClick={handleEditState}>
-                        Edit Listing
-                    </div>
+                    <div className='placeholder'></div>
+
+                    
+                        {listing.user_id === user_id && (
+                            <div className='single-listing-back-btn' onClick={handleEditState}>
+                        Edit Listing </div>
+                        )}
                 </div>
                 <div className='single-page-img'>
                     <img src={`${baseURL}/public/uploads/${listing.image}`} alt="photo of listing here" />      
