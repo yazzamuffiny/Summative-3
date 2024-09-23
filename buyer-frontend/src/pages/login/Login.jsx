@@ -21,7 +21,7 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className='login-page'>
       {/* login page main box */}
         <div className='login-page-box'>
 

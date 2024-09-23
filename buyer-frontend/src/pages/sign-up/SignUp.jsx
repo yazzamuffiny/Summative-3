@@ -21,7 +21,7 @@ const SignUp = () => {
     }
 
   return (
-    <>
+    <div className='signup-page'>
         {/* signup page main box */}
         <div className='signup-page-box'>
 
@@ -81,7 +81,7 @@ const SignUp = () => {
             </div>
 
         </div>
-    </>
+    </div>
   )
 }
 
