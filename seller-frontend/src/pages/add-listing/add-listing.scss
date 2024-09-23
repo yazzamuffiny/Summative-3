@@ -45,6 +45,7 @@
     margin: 30px;
     padding: 30px;
     border-radius: 50px;
+    box-shadow: 5px 3px 3px 1px rgba(0,0,0,0.24);
 
     h2 {
         font-family: "Jua", sans-serif;
@@ -54,17 +55,18 @@
     .input-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 10px;
+        margin-bottom: 15px;
 
         .form-input {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            width: 200px;
+            margin: auto;
+            width: 85%;
     
             label {
                 font-family: "Afacad", sans-serif;
                 margin-bottom: 7px;
+                text-align: left;
             }
         
             input, select {
@@ -85,7 +87,7 @@
         font-family: "Jua", sans-serif;
         color: white;
         font-size: 1.3em;
-        margin-left: 40%;
+        margin: auto;
         transition: all 0.3s ease;
     }
     button:hover {
@@ -99,8 +101,9 @@
 
 @media screen and (min-width: 600px) {
     .backbtn-title {
-
+        
         h1 {
+            margin-left: 16%;
             font-size: 1.7em;
         }
     }
@@ -111,9 +114,9 @@
             grid-template-columns: repeat(2,1fr);
         }
 
-        button {
-            margin-left: 0%;
-        }
+        // button {
+        //     margin-left: 0%;
+        // }
     }
 }
 
@@ -124,9 +127,9 @@
             grid-template-columns: repeat(3,1fr);
         }
 
-        button {
-            margin-left: 0%;
-        }
+        // button {
+        //     margin-left: 0%;
+        // }
     }
 }
 
@@ -139,8 +142,8 @@
 
     .add-listing-form {
 
-        button {
-            margin-left: 40%;
-        } 
+        // button {
+        //     margin-left: 40%;
+        // } 
     }
 }
