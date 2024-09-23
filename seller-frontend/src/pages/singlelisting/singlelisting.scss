@@ -150,6 +150,7 @@
             .listing-tags {
                 display: flex;
                 gap: 5px;
+                flex-wrap: wrap;
                 .gender-tag {
                     margin: 10px;
                     border-radius: 50px;
@@ -224,7 +225,7 @@
         }
     }
     .comments-box {
-        margin: 20px 150px;
+        margin: 20px 90px;
         margin-bottom: 100px;
         border-radius: 50px;
         background-color: white;
