@@ -106,7 +106,7 @@
 
         // login form css
         #login-form-box {
-            width: 70%;
+            width: 100%;
             margin-top: 20px;
 
             @include white-box;
@@ -231,6 +231,10 @@ footer {
 
             .login-left-content-box, .login-right-content-box {
                 padding: 0;
+            }
+
+            .login-left-content-box {
+                padding-right: 25px;
 
                 .header-box {
                     .main-header {
@@ -239,7 +243,7 @@ footer {
                 }
 
                 #login-form-box {
-                    width: 80%;
+                    width: 100%;
                 }
             }
         }
