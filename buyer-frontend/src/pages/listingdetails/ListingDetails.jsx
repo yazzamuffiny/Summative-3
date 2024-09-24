@@ -1,8 +1,14 @@
+//css import
 import './listingdetails.scss';
+
+//react import
 import React from 'react';
+
+//package imports
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { useNavigate } from 'react-router-dom';
 
+//base URL import
 const baseURL = import.meta.env.VITE_API_BASE_URL
 
 
@@ -14,6 +20,7 @@ const ListingDetails = ({ listing }) => {
     navigate(`/${listing._id}`);
   };
 
+  //chop email end off user
   const getEmailCharactersBeforeAtSymbol = (email) => {
     const delimiter = '@';
     const parts = email.split(delimiter);

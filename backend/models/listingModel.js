@@ -53,4 +53,5 @@ const listingSchema = new Schema({
     ]
 }, {timestamps: true});
 
+//export model
 module.exports = mongoose.model('Listing', listingSchema);

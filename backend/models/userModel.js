@@ -1,8 +1,14 @@
+//call mongoose
 const mongoose = require('mongoose');
+
+//import email and password security
 const bcrypt = require('bcrypt');
 const validator = require('validator');
+
+//call schema
 const Schema = mongoose.Schema;
 
+// create schema
 const userSchema = new Schema({
     email: {
         type: String,
@@ -15,6 +21,7 @@ const userSchema = new Schema({
     }
 })
 
+//static for signup
 userSchema.statics.signup = async function (email, password) {
     if(!email || !password) {
         throw Error ('All Fields Must Be Filled In')
@@ -41,6 +48,7 @@ userSchema.statics.signup = async function (email, password) {
     return user
 }
 
+//static for login
 userSchema.statics.login = async function (email, password) {
     if (!email || !password) {
         throw Error ('All Fields Must Be Filled In');

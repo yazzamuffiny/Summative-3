@@ -1,28 +1,30 @@
 // css import
 import './listings.scss'
 
-//rect imports
+//react imports
 import { useEffect, useState } from 'react'
 
+// package imports
 import axios from 'axios'
 
+//page imports
 import ListingDetails from '../listingdetails/ListingDetails'
 
+//base url import
 const baseURL = import.meta.env.VITE_API_BASE_URL
 
 const Listings = () => {
 
     const [listings, setListings] = useState([])
-
     const [ searchTerm, setSearchTerm ] = useState('')
     const [ gender, setGender ] = useState('')
     const [ age, setAge ] = useState('')
     const [ size, setSize ] = useState('')
     const [ location, setLocation ] = useState('')
-
     const [ searchedListings, setSearchedListings ] = useState([])
     
 
+    //clear search & filters
     const handleClearFilters = () => {
         setSearchTerm('');
         setGender('');
@@ -31,7 +33,7 @@ const Listings = () => {
         setLocation('');
     };
    
-
+    //basic get all listings
     useEffect (() => {
         const fetchListings = async () => {
             try {
@@ -48,7 +50,7 @@ const Listings = () => {
        
     }, [])
 
-
+    //filter all the listings
     useEffect(() => {
         const filteredListings = listings
             .filter(listing => 

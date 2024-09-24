@@ -34,7 +34,7 @@ const SignUp = () => {
                 </div>
 
                 {/* signup form box */}
-                <form id='signup-form-box' onSubmit={signUpSubmit}>
+                <form className='signup-form-box' onSubmit={signUpSubmit}>
                     <h3 className='signup-subheader'>Sign Up</h3>
 
                     {/* signup fields & label box */}
@@ -62,7 +62,7 @@ const SignUp = () => {
                         {/* signup btn box */}
                         <div className='signup-btn-box'>
                             <button 
-                                id='signup-btn' 
+                                className='signup-btn' 
                                 onClick={signUpSubmit}
                                 disabled={isLoading}
                                 >Sign Up

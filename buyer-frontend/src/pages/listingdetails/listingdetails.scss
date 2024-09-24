@@ -1,3 +1,4 @@
+//whole card
 .listing-card {
     background-color: white;
     width: 800px;
@@ -6,6 +7,7 @@
     margin-bottom: 20px;
     border: 3px solid black;
     transition: all 0.3s ease;
+    //card image
     .card-img {
         display: flex;
         justify-content: center;
@@ -22,6 +24,7 @@
             border: 3px solid black;
         }
     }
+    //card text
     .card-info {
         position: relative;
         width: 50%;
@@ -61,6 +64,7 @@
         }
     }
 }
+//whole card hover
 .listing-card:hover {
     cursor: pointer;
     transform: scale(1.03);
@@ -68,6 +72,7 @@
     border: 3px solid #7AC898;
 }
 
+//tablet
 @media screen and (max-width: 900px) {
     .listing-card {
         width: 400px;
@@ -93,6 +98,7 @@
     }
 }
 
+//mobile
 @media screen and (max-width: 600px) {
     .listing-card {
         width: 100%;

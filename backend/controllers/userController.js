@@ -1,4 +1,7 @@
+//import user model
 const User = require ('../models/userModel');
+
+//import json web token
 const jwt = require('jsonwebtoken');
 
 // token creation
@@ -30,7 +33,6 @@ const signupUser = async (req,res) => {
     } catch (error) {
         res.status(400).json({error: error.message})
     }
-    // res.json({mssg: 'signup user'})
 }
 
 module.exports = {signupUser, loginUser}

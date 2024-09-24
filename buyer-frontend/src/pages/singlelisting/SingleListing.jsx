@@ -1,14 +1,19 @@
+//import css
 import './singlelisting.scss';
 
+//react imports
 import { useState, useEffect } from 'react';
 
+//package imports
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { formatDistanceToNow } from 'date-fns';
 
+//icon imports
 import { FaChevronLeft } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 
+//base url import
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 const SingleListing = () => {
@@ -22,14 +27,14 @@ const SingleListing = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-
+    //chop email off user
     const getEmailCharactersBeforeAtSymbol = (email) => {
         const delimiter = '@';
         const parts = email.split(delimiter);
         return parts.length > 1 ? parts[0]: '';
       }
 
-
+// add comment function
     const handleAddComment = async () => {
         try {
             const response = await axios.post(`${baseURL}/api/comments/listings/${listing._id}/comments`, 
@@ -51,6 +56,7 @@ const SingleListing = () => {
         }
     }
 
+//get listing by id
     useEffect(() => {
         const fetchListings = async () => {
             try {
@@ -65,10 +71,17 @@ const SingleListing = () => {
         fetchListings();
     }, [id]);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error.message}</div>;
-    if (!listing) return <div>No listing found.</div>;
+//some state conditionals    
+    if (loading) return 
+        <div>Loading...</div>;
 
+    if (error) return 
+        <div>Error: {error.message}</div>;
+    
+    if (!listing) return 
+        <div>No listing found.</div>;
+
+//back btn navigate
     const handleBack = () => {
         navigate(-1);
     };

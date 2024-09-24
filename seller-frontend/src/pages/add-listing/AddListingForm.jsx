@@ -1,16 +1,26 @@
-import { useNavigate } from "react-router-dom"
+//css imprt
 import './add-listing.scss'
+
+//react imports
 import { useState } from "react";
-import { useListingsContext } from "../../hooks/useListingsContext";
+
+//package imports
+import { useNavigate } from "react-router-dom"
 import axios from "axios";
+
+//context imports
+import { useListingsContext } from "../../hooks/useListingsContext";
+
+//icon imports
 import { FaChevronLeft } from "react-icons/fa";
 
 
 const AddListingForm = () => {
+
   const {dispatch} = useListingsContext();
   const baseURL = import.meta.env.VITE_API_BASE_URL;
-  const user_id = localStorage.getItem('user_id');
   const navigate = useNavigate();
+
   const [breed, setBreed] = useState('');
   const [gender, setGender] = useState('');
   const [age, setAge] = useState('');
@@ -29,6 +39,7 @@ const AddListingForm = () => {
     const user = JSON.parse(localStorage.getItem('user'));
     const user_id = user.email
 
+    //form data
     const formData = new FormData();
     formData.append('breed', breed);
     formData.append('age', age);
@@ -57,7 +68,7 @@ const AddListingForm = () => {
       setPrice('');
       setImage(null);
       setError(null);
-      console.log('New listing added', response.data);
+  
       dispatch({ type: 'CREATE_LISTINGS', payload: response.data }); // Uncomment if using Redux
     } catch (error) {
       setError(error.message);
@@ -82,6 +93,7 @@ const AddListingForm = () => {
 
         {/* inputs */}
         <div className="input-grid">
+          {/* breed input */}
           <div className="form-input">
             <label htmlFor=""> Breed Name: </label>
             <input 
@@ -91,6 +103,7 @@ const AddListingForm = () => {
             />
           </div>
 
+          {/* age input */}
           <div className="form-input">
             <label htmlFor="age"> Age: </label>
             <select name="age" id="age" onChange={(e) => setAge(e.target.value)} value={age}>
@@ -104,6 +117,7 @@ const AddListingForm = () => {
             </select>
           </div>
 
+          {/* gender input */}
           <div className="form-input">
             <label htmlFor="gender"> Gender: </label>
             <select name="gender" id="gender" onChange={(e) => setGender(e.target.value)} value={gender}>
@@ -114,6 +128,7 @@ const AddListingForm = () => {
             </select>
           </div>
           
+          {/* size input */}
           <div className="form-input">
             <label htmlFor="size"> Dog Size: </label>
             <select name="size" id="size" onChange={(e) => setSize(e.target.value)} value={size}>
@@ -125,6 +140,7 @@ const AddListingForm = () => {
             </select>
           </div>
 
+          {/* number available input */}
           <div className="form-input">
             <label htmlFor="number"> Number Available: </label>
             <input 
@@ -133,26 +149,27 @@ const AddListingForm = () => {
               value={number} />
           </div>
 
+          {/* location input */}
           <div className="form-input">
             <label htmlFor="location"> Location: </label>
             <select name="location" id="location" onChange={(e) => setLocation(e.target.value)} value={location}>
-            <option value=''>Please Select</option>
-                      <option value='northland'>Northland</option>
-                      <option value='auckland'>Auckland</option>
-                      <option value='waikato'>Waikato</option>
-                      <option value='bayOfPlenty'>Bay of Plenty</option>
-                      <option value='gisbourne'>Gisbourne</option>
-                      <option value='hawkesBay'>Hawkes Bay</option>
-                      <option value='taranaki'>Taranaki</option>
-                      <option value='manawatuWhanganui'>Manawatū-Whanganui</option>
-                      <option value='wellington'>Wellington</option>
-                      <option value='tasman'>Tasman</option>
-                      <option value='nelson'>Nelson</option>
-                      <option value='marlborough'>Marlborough</option>
-                      <option value='westCoast'>West Coast</option>
-                      <option value='canterbury'>Canterbury</option>
-                      <option value='otago'>Otago</option>
-                      <option value='southland'>Southland</option>
+              <option value=''>Please Select</option>
+              <option value='northland'>Northland</option>
+              <option value='auckland'>Auckland</option>
+              <option value='waikato'>Waikato</option>
+              <option value='bayOfPlenty'>Bay of Plenty</option>
+              <option value='gisbourne'>Gisbourne</option>
+              <option value='hawkesBay'>Hawkes Bay</option>
+              <option value='taranaki'>Taranaki</option>
+              <option value='manawatuWhanganui'>Manawatū-Whanganui</option>
+              <option value='wellington'>Wellington</option>
+              <option value='tasman'>Tasman</option>
+              <option value='nelson'>Nelson</option>
+              <option value='marlborough'>Marlborough</option>
+              <option value='westCoast'>West Coast</option>
+              <option value='canterbury'>Canterbury</option>
+              <option value='otago'>Otago</option>
+              <option value='southland'>Southland</option>
             </select>
           </div>
         </div>
@@ -161,29 +178,33 @@ const AddListingForm = () => {
         <h2> Listing Information: </h2>
 
         <div className="input-grid">
-        <div className="form-input">
-          <label htmlFor=""> Price: </label>
-          <input type="text" 
-          onChange={(e) => setPrice(e.target.value)}
-          value={price}
-          />
-        </div>
 
-        <div className="form-input">
-          <label htmlFor=""> Image Upload: </label>
-          <input type="file" accept='image/*' onChange={(e) => setImage(e.target.files[0])}/>
+          {/* price input */}
+          <div className="form-input">
+            <label htmlFor=""> Price: </label>
+            <input type="text" 
+            onChange={(e) => setPrice(e.target.value)}
+            value={price}
+            />
           </div>
 
-        <div className="form-input">
-          <label htmlFor=""> Further Information: </label>
-          <input 
-            type="text"
-            onChange={(e) => setInfo(e.target.value)}
-            value={info} 
-            placeholder="Max 100 Characters"
-            maxLength={100}
-            />
-        </div>
+          {/* image input */}
+          <div className="form-input">
+            <label htmlFor=""> Image Upload: </label>
+            <input type="file" accept='image/*' onChange={(e) => setImage(e.target.files[0])}/>
+            </div>
+
+          {/* additional info input */}
+          <div className="form-input">
+            <label htmlFor=""> Further Information: </label>
+            <input 
+              type="text"
+              onChange={(e) => setInfo(e.target.value)}
+              value={info} 
+              placeholder="Max 100 Characters"
+              maxLength={100}
+              />
+          </div>
         </div>
         {/* end of second input grid */}
         <button onClick={() => navigate(-1)}>Add New Listing</button>

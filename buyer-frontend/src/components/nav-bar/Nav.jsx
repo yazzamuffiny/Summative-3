@@ -1,8 +1,14 @@
+//stylesheet import
+import './nav.scss'
+
+//import hooks
 import { useLogout } from '../../hooks/useLogout';
 import { useAuthContext } from '../../hooks/useAuthContext';
+
+//package imports
 import { useNavigate } from 'react-router-dom';
 
-import './nav.scss'
+
 
 const Nav = () => {
 
@@ -38,7 +44,7 @@ const Nav = () => {
         {user && <div className="userInt">
           <span>{user.email ? getEmailCharactersBeforeAtSymbol(user.email) : 'Unknown'}</span>
           <button className='logout-btn' onClick={handleLogout}> Logout </button>
-          </div>}
+        </div>}
       </div>
     </div>
   )

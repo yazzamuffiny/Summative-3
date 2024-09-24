@@ -4,7 +4,6 @@
     gap: 20px;
     margin: 20px;
     
-
     .back-btn {
         text-align: center;
         padding: 15px;
@@ -102,6 +101,7 @@
     }
 }
 
+//mobile
 @media screen and (min-width: 600px) {
     .backbtn-title {
         
@@ -119,6 +119,7 @@
     }
 }
 
+//tablet
 @media screen and (min-width: 900px) {
     .add-listing-form {
 
@@ -128,6 +129,7 @@
     }
 }
 
+//laptop
 @media screen and (min-width: 1080px) {
     .backbtn-title {
         h1 {

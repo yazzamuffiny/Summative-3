@@ -1,6 +1,11 @@
+//css imports
+import './nav.scss'
+
+//hook imports
 import { useLogout } from '../../hooks/useLogout';
 import { useAuthContext } from '../../hooks/useAuthContext';
-import './nav.scss'
+
+//package imprts
 import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
@@ -9,15 +14,18 @@ const Nav = () => {
   const {user} = useAuthContext();
   const navigate = useNavigate();
 
-
+  //handle logout function
   const handleLogout = () => {
     logout();
     navigate('/');
   }
 
+  //navigate to home
   const navigateHome = () => {
     navigate('/')
   }
+
+  //chop email from user
   const getEmailCharactersBeforeAtSymbol = (email) => {
     const delimiter = '@';
     const parts = email.split(delimiter);
