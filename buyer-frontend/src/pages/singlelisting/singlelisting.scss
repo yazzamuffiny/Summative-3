@@ -1,5 +1,7 @@
+//whole page
 .single-listing-page {
     margin-top: 20px;
+    //top banner
     .single-page-top {
         display: flex;
         flex-direction: row;
@@ -46,6 +48,7 @@
             margin-right: 20px;
         }
     }
+    //img section
     .single-page-img {
         display: flex;
         justify-content: center;
@@ -65,12 +68,14 @@
             }
         }
     }
-
+//text section
     .single-page-info {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin: 0px 30px;
+
+        //info box one
         .listing-info {
             background-color: white;
             border-radius: 50px;
@@ -127,6 +132,8 @@
                 font-size: 1.5em;
             }
         }
+
+        //info box 2
         .seller-info {
             background-color: white;
             display: flex;
@@ -163,6 +170,8 @@
             }
         }
     }
+
+    //comments
     .comments-box {
         margin: 20px 30px 100px 30px;
         border-radius: 50px;
@@ -225,7 +234,7 @@
     
 }
 
-
+//tablet
 @media screen and (max-width: 900px) {
     .single-listing-page {
         .single-page-top {
@@ -256,6 +265,7 @@
     }
 }
 
+//mobile
 @media screen and (max-width: 600px) {
     .single-listing-page {
         .single-page-info {

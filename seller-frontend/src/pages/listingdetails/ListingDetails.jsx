@@ -1,7 +1,15 @@
+//css import
 import '../listingdetails/listing-details.scss';
+
+//react imports
 import React from 'react';
+
+//package imports
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { useNavigate } from 'react-router-dom';
+
+//import base url
+const baseURL = import.meta.env.VITE_API_BASE_URL
 
 const ListingDetails = ({ listing }) => {
   const navigate = useNavigate();
@@ -12,8 +20,8 @@ const ListingDetails = ({ listing }) => {
     navigate(path);
   };
 
-  const baseURL = import.meta.env.VITE_API_BASE_URL
-
+  
+  //chop email off user
   const getEmailCharactersBeforeAtSymbol = (email) => {
     const delimiter = '@';
     const parts = email.split(delimiter);
@@ -23,8 +31,9 @@ const ListingDetails = ({ listing }) => {
   return (
     <div className='listing-card' onClick={handleNavigate}>
       <div className='card-img'>
-      <img src={`${baseURL}/public/uploads/${listing.image}`} alt="photo of listing here" />      
+        <img src={`${baseURL}/public/uploads/${listing.image}`} alt="photo of listing here" />      
       </div>
+
       <div className='card-info'>
         <h3>{listing.breed}</h3>
         <h4> {listing.user_id ? getEmailCharactersBeforeAtSymbol(listing.user_id) : 'Unknown'}</h4>
@@ -34,6 +43,7 @@ const ListingDetails = ({ listing }) => {
           <p className='age-tag'>{listing.age}</p>
           <p className='available-tag'>{listing.number_available}</p>
         </div>
+
         <p className='date'>
           Created&nbsp;
           {formatDistanceToNow(new Date(listing.createdAt), {
@@ -41,6 +51,7 @@ const ListingDetails = ({ listing }) => {
           })}{' '}
           ago
         </p>
+        
       </div>
     </div>
   );

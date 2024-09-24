@@ -1,15 +1,9 @@
-// comment model import
+// model imports
 const Comment = require('../models/commentModel')
 const Listing = require('../models/listingModel')
 
 // mongoose import 
 const mongoose = require('mongoose')
-
-// get all comments method
-// const getComments = async (req, res) => {
-//     const comments = await Comment.find({}).sort({createdAt: -1})
-//     res.status(200).json(comments)
-// }
 
 // create comments method
 const createComment = async (req, res) => {

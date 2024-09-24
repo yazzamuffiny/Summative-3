@@ -1,4 +1,7 @@
+//import context
 import { AuthContext } from '../context/AuthContext';
+
+//import form react
 import { useContext } from 'react';
 
 export const useAuthContext = () => {

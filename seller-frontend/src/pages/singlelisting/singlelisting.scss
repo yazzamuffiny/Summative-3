@@ -1,5 +1,8 @@
+//whole page
 .single-listing-page {
     margin-top: 20px;
+
+    //edit page
     .edit-title {
         background-color: white;
         padding: 20px;
@@ -79,6 +82,8 @@
             }
         }
     }
+
+    //page header
     .single-page-top {
         display: flex;
         flex-direction: row;
@@ -120,6 +125,8 @@
             -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
         }
     }
+
+    //image section
     .single-page-img {
         height: 60vh;
         display: flex;
@@ -135,10 +142,13 @@
         }
     }
 
+    //text section
     .single-page-info {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+
+        //info left
         .listing-info {
             display: flex;
             flex-direction: column;
@@ -238,6 +248,8 @@
                 font-size: 1.5em;
             }
         }
+
+        //info right
         .seller-info {
             background-color: white;
             padding: 50px;
@@ -270,6 +282,8 @@
             }
         }
     }
+
+    //comments
     .comments-box {
         margin: 20px 90px;
         margin-bottom: 100px;
@@ -333,6 +347,8 @@
    
 }
 
+//laptop
+
 @media screen and (max-width: 1080px) {
     .edit-title {
         margin: auto;
@@ -340,6 +356,8 @@
     }
 }
 
+
+//tablet
 @media screen and (max-width: 900px) {
     .single-listing-page {
         .form-edit-page {
@@ -392,6 +410,7 @@
     }
 }
 
+//mobile
 @media screen and (max-width: 600px) {
     .single-listing-page {
 

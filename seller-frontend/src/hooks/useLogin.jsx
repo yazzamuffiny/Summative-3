@@ -1,8 +1,14 @@
-import axios from 'axios';
+//react imports
 import { useState } from 'react';
-import { useAuthContext } from './useAuthContext'
+
+//package imports
+import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 
+//context import
+import { useAuthContext } from './useAuthContext'
+
+//base url import
 const baseURL = import.meta.env.VITE_API_BASE_URL
 
 export const useLogin = () => {
@@ -32,7 +38,6 @@ export const useLogin = () => {
                 setIsLoading(false)
                 navigate('/seller-home')
             }
-            console.log(response);
         } catch (error) {
             console.error(error.response.data.error);
             setError(error.response.data.error);

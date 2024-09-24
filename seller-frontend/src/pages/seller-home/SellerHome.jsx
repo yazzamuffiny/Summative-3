@@ -1,13 +1,17 @@
-import { useNavigate } from 'react-router-dom'
+// css import
 import './seller-home.scss'
-import '../listingdetails/listing-details.scss'
-import ListingDetails from '../listingdetails/ListingDetails'
 
-//rect imports
+//react imports
 import { useEffect, useState } from 'react'
 
+//package imports
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+//page imports
+import ListingDetails from '../listingdetails/ListingDetails'
+
+//base url imports
 const baseURL = import.meta.env.VITE_API_BASE_URL
 
 
@@ -27,18 +31,22 @@ const Home = () => {
   const userId = user ? user._id : null;
 
 //   FUNCTIONS
+//add listing navigate
   const handleAdd = () => {
     navigate('/add-listing');
   };
 
+  //show my listings filter
   const handleShowMyListings = () => {
     setShowMyListings(true);
   };
 
+  //show all listings filter
   const handleShowAllListings = () => {
     setShowMyListings(false);
   };
 
+  //clear filters function
   const handleClearFilters = () => {
     setSearchTerm('');
     setGender('');
@@ -47,7 +55,7 @@ const Home = () => {
     setLocation('');
 };
 
-
+//get all listings
     useEffect (() => {
       const fetchListings = async () => {
           try {
@@ -64,6 +72,7 @@ const Home = () => {
      
   }, [])
 
+  //filter listings
   useEffect(() => {
     const filteredListings = listings
         .filter(listing => 
@@ -90,10 +99,10 @@ const Home = () => {
   return (
     <div className='seller-home'>
       <div className='page-title'>
-      <h1> Local Listings </h1>
+        <h1> Local Listings </h1>
       </div>
-      <div className='filter-listing-cont'>
 
+      <div className='filter-listing-cont'>
         <div className='create-filter-search-box'>
           {/* create and filter box */}
          <div className='create-and-filter-box'>
@@ -104,7 +113,6 @@ const Home = () => {
         </div>
 
         <div className='form-box'>
-
             {/* search box */}
             <div className='search-box'>
                 <label htmlFor='search'>Search Breed:</label>
@@ -117,7 +125,6 @@ const Home = () => {
                     onChange={(event) => setSearchTerm(event.target.value)}
                 />
             </div>
-
             {/* filters box */}
             <div className='filter-box'>
                 {/* gender filter */}
@@ -163,7 +170,7 @@ const Home = () => {
                     <option value='large'>Large</option>
                     <option value='xlarge'>Extra Large</option>
                 </select>
-                {/* size filter */}
+                {/* location filter */}
                 <label htmlFor='location'>Location:</label>
                 <select 
                     name="location" 

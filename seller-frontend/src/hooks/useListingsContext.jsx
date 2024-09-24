@@ -1,5 +1,9 @@
-import { ListingsContext } from "../context/ListingsContext";
+//react imports
 import { useContext } from "react";
+
+//context imports
+import { ListingsContext } from "../context/ListingsContext";
+
 
 export const useListingsContext = () => {
     const context = useContext (ListingsContext)  // provides both state and dispatch

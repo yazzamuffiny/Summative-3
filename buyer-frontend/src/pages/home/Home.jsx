@@ -8,17 +8,19 @@ const Home = () => {
 
   const navigate = useNavigate()
   
-
+    //to log in page
   const NavigateLogIn = async (e) => {
     e.preventDefault()
     navigate(`/login`)
   }
 
+  //to sign up page
   const NavigateSignUp = async (e) => {
     e.preventDefault()
     navigate(`/signup`)
   }
 
+  //to listings page
   const navigateListings = async (e) => {
     e.preventDefault()
     navigate(`/listings`)
@@ -41,13 +43,13 @@ const Home = () => {
             <div className='home-content-box'>
               {/* home text */}
               <div className='home-text-box'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quam incidunt adipisci illum fugit veniam quos aliquid eaque pariatur.
+                Welcome to PawMatch, your go to destination for finding pedigree dogs in New Zealand. PawMatch helps you connect with your perfect furry match. Start your journey to dog ownership today!
               </div>
               {/* home btns box */}
               <div className='home-btns-box'>
-                <button id='go-to-sign-up-btn' onClick={NavigateSignUp}>Sign Up</button>
-                <button id='go-to-log-in-btn' onClick={NavigateLogIn}>Log In</button>
-                <button id='go-to-listings' onClick={navigateListings}>Skip</button>
+                <button className='go-to-sign-up-btn' onClick={NavigateSignUp}>Sign Up</button>
+                <button className='go-to-log-in-btn' onClick={NavigateLogIn}>Log In</button>
+                <button className='go-to-listings' onClick={navigateListings}>Skip</button>
               </div>
             </div>
           </div>
@@ -56,7 +58,7 @@ const Home = () => {
           <div className='home-right-content-box'>
             {/* home logo box */}
             <div className='home-logo-box'>
-            <img src="src/images/dog-gif.gif" alt="pawmatch logo" />
+              <img src="src/images/dog-gif.gif" alt="pawmatch logo" />
             </div>
           </div>
         </div>

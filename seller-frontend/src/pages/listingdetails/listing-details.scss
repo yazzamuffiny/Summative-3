@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Hachi+Maru+Pop&family=Jua&display=swap');
 
+//whole card
 .listing-card {
     background-color: white;
     border-radius: 50px;
@@ -7,12 +8,14 @@
     border: 3px solid black;
     transition: all 0.3s ease;
 
+    //img
     .card-img img {
         object-fit: cover;
         border-radius: 50%;
         border: 3px solid black;
     }
 
+    //info
     .card-tags {
         display: flex;
         font-family: "Afacad", sans-serif;

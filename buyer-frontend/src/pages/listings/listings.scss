@@ -1,10 +1,13 @@
+//font import
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Hachi+Maru+Pop&family=Jua&display=swap');
 
+//whole page
 .listings-page {
     height: 100%;
     padding: 20px;
     font-family: "Afacad", sans-serif;
     margin-bottom: 100px;
+    //page header
     .page-header {
         display: flex;
         justify-content: center;
@@ -20,6 +23,7 @@
             font-family: "Hachi Maru Pop", cursive;
         }
     }
+    //white box
     .listing-box {
         padding: 20px;
         display: flex;
@@ -30,6 +34,7 @@
         -moz-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
         background-color: rgb(255, 255, 255);
         border-radius: 50px;
+        //search/filter form
         .form-box {
             height: 500px;
             display: flex;
@@ -39,6 +44,7 @@
             border-radius: 50px;
             background-color: white;
             border: 3px solid black;
+            //search bar
             .search-header {
                 font-size: 2em;
                 font-family: "Jua", sans-serif;
@@ -54,6 +60,7 @@
                     padding: 5px;
                 }
             }
+            //filters
             .filter-box {
                 display: flex; 
                 flex-direction: column;

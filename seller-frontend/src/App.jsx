@@ -15,7 +15,6 @@ import Login from './pages/login/Login'
 import AddListingForm from './pages/add-listing/AddListingForm'
 import SignUp from './pages/sign-up/SignUp'
 import SellerHome from './pages/seller-home/SellerHome'
-import Listings from './pages/listings/Listings'
 import SingleListing from './pages/singlelisting/SingleListing'
 
 const App = () => {
@@ -30,7 +29,6 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/add-listing' element={<AddListingForm/>}/>
           <Route path='/seller-home' element={user? <SellerHome/> : <Navigate to="/signup" />}/>
-          <Route path='/listings' element={<Listings/>}/>
           <Route path='/:id' element={<SingleListing/>}/>
         </Routes>
       <Footer/>

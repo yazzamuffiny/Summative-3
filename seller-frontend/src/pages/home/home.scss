@@ -131,8 +131,8 @@ body {
                     margin-bottom: 20px;
 
                     // sign up & log in btns css
-                    #go-to-sign-up-btn,
-                    #go-to-log-in-btn {
+                    .go-to-sign-up-btn,
+                    .go-to-log-in-btn {
                         padding: 10px 72px;
                         border-radius: 50px;
                         background-color: #349DD6;
@@ -142,8 +142,8 @@ body {
                         border: 2px solid #349DD6;
                     }
 
-                    #go-to-sign-up-btn:hover,
-                    #go-to-log-in-btn:hover {
+                    .go-to-sign-up-btn:hover,
+                    .go-to-log-in-btn:hover {
                         background-color: white;
                         border: 2px solid #349DD6;
                         color: #349DD6;
@@ -355,8 +355,8 @@ body {
                             flex-direction: column;
                             gap: 20px;
 
-                            #go-to-sign-up-btn,
-                            #go-to-log-in-btn {
+                            .go-to-sign-up-btn,
+                            .go-to-log-in-btn {
                                 padding: 10px 65px;
                             }
                         }

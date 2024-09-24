@@ -7,10 +7,9 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 // route imports
-//  ---------  ROUTES GO HERE
-const commentRoutes = require('./routes/comments')
-const userRoutes = require('./routes/user')
-const listingRoutes = require('./routes/listing')
+const commentRoutes = require('./routes/comments');
+const userRoutes = require('./routes/user');
+const listingRoutes = require('./routes/listing');
 
 
 //set variable of app to run express method
@@ -32,10 +31,9 @@ app.use((req, res, next) => {
 });
 
 //attach routes to the app
-// ---------- Route paths go here
-app.use('/api/comments/', commentRoutes)
+app.use('/api/comments/', commentRoutes);
 app.use('/api/user', userRoutes);
-app.use('/api/listings/', listingRoutes)
+app.use('/api/listings/', listingRoutes);
 
 // Multer static files - from public/uploads
 app.use('/public/uploads', express.static('public/uploads'));
@@ -64,8 +62,8 @@ const mongoURI = `mongodb+srv://${mongoUsername}:${mongoPassword}@cluster0.ch8gy
 //connect to mongo
 mongoose.connect(mongoURI)
     .then(() => {
-        console.log('Connected to MongoDB Atlas')
+        console.log('Connected to MongoDB Atlas');
     })
     .catch((err) => {
-        console.log('Error connection to MongoDB Atlas')
+        console.log('Error connection to MongoDB Atlas');
     });
