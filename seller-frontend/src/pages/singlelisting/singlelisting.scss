@@ -27,20 +27,23 @@
             font-family: 'Jua', sans-serif;
         }
         .dog-form-info-edit, .listing-form-edit-info {
+            margin-bottom: 25px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             .form-column {
+                width: 30%;
                 display: flex;
                 flex-direction: column;
                 label {
+                    margin-bottom: 7px;
                     font-size: 2em;
                 }
                 input, select {
                     height: 40px;
-                    border-radius: 50px;
+                    border-radius: 10px;
                     padding: 10px;
-                    width: 400px;
+                    // width: 400px;
                     border: 2px solid black;
                     box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
                     -webkit-box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.75);
@@ -331,11 +334,35 @@
 }
 
 @media screen and (max-width: 1080px) {
-
+    .edit-title {
+        margin: auto;
+        padding: 20px 50px;
+    }
 }
 
 @media screen and (max-width: 900px) {
     .single-listing-page {
+        .form-edit-page {
+            h2 {
+                text-align: center;
+            }
+            .dog-form-info-edit, .listing-form-edit-info, .form-button-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                // display: grid;
+                // grid-template-columns: repeat(1, 1fr);
+                
+                .form-column {
+                    width: 85%;
+                }
+                button {
+                    margin-bottom: 25px;
+                }
+            }
+        }
 
         .single-page-top {
             flex-direction: row;
