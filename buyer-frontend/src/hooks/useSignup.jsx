@@ -40,7 +40,6 @@ export const useSignup = () => {
                 navigate('/listings')
             }
 
-            console.log(response);
         } catch (error) {
             console.error(error.response.data.error)
             setError(error.response.data.error)
