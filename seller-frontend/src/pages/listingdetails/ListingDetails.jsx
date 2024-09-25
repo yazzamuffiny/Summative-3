@@ -39,9 +39,9 @@ const ListingDetails = ({ listing }) => {
         <h4> {listing.user_id ? getEmailCharactersBeforeAtSymbol(listing.user_id) : 'Unknown'}</h4>
 
         <div className='card-tags'>
-          <p className='gender-tag'>{listing.gender}</p>
-          <p className='age-tag'>{listing.age}</p>
-          <p className='available-tag'>{listing.number_available}</p>
+          <p className='gender-tag'>Gender: {listing.gender.toUpperCase()}</p>
+          <p className='age-tag'>Age: {listing.age.toUpperCase()}</p>
+          <p className='available-tag'>Number Available: {listing.number_available.toUpperCase()}</p>
         </div>
 
         <p className='date'>
